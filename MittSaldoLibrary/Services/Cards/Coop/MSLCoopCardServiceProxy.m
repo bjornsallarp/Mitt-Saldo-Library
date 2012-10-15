@@ -11,7 +11,7 @@
 //
 
 #import "MSLCoopCardServiceProxy.h"
-#import "MSNetworkingClient.h"
+#import "MSLNetworkingClient.h"
 #import "MSLParsedAccount.h"
 #import "JSONKit.h"
 

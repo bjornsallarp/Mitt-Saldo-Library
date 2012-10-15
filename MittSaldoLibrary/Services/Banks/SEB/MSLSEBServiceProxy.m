@@ -12,7 +12,7 @@
 
 #import "MSLSEBServiceProxy.h"
 #import "MSLSEBAccountParser.h"
-#import "MSNetworkingClient.h"
+#import "MSLNetworkingClient.h"
 
 NSString * const kMSSEBLoginURL = @"https://m.seb.se/cgi-bin/pts3/mps/1000/mps1001bm.aspx";
 NSString * const kMSSEBTransferFundsURL = @"https://m.seb.se/cgi-bin/pts3/mps/1100/mps1104.aspx?P1=E";

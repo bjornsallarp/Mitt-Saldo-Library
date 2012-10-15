@@ -13,7 +13,7 @@
 #import "MSLLansforsakringarServiceProxy.h"
 #import "MSLLansforsakringarLoginParser.h"
 #import "MSLLansforsakringarAccountParser.h"
-#import "MSNetworkingClient.h"
+#import "MSLNetworkingClient.h"
 
 NSString * const kMSLansforsakringarLoginURL = @"https://mobil.lansforsakringar.se/lf-mobile/pages/login.faces?pnr=null";
 NSString * const kMSLansforsakringarTransferFundsURL = @"https://mobil.lansforsakringar.se/lf-mobile/pages/overview.faces";

@@ -12,7 +12,7 @@
 
 #import "MSLServiceProxyBase.h"
 #import "MSLAccountsParserBase.h"
-#import "MSNetworkingClient.h"
+#import "MSLNetworkingClient.h"
 
 @implementation MSLServiceProxyBase
 @dynamic loginURL;

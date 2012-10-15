@@ -13,7 +13,7 @@
 #import "MSLSwedbankServiceProxy.h"
 #import "MSLSwedbankLoginParser.h"
 #import "MSLSwedbankAccountParser.h"
-#import "MSNetworkingClient.h"
+#import "MSLNetworkingClient.h"
 
 NSString * const kMSSwedbankLoginURL = @"https://mobilbank.swedbank.se/banking/swedbank/login.html";
 NSString * const kMSSwedbankTransferFundsURL = @"https://mobilbank.swedbank.se/banking/swedbank/newTransfer.html";

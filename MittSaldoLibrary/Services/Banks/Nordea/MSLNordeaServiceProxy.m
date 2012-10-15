@@ -13,7 +13,7 @@
 #import "MSLNordeaServiceProxy.h"
 #import "MSLNordeaLoginParser.h"
 #import "MSLNordeaAccountParser.h"
-#import "MSNetworkingClient.h"
+#import "MSLNetworkingClient.h"
 
 NSString * const kMSNordeaLoginURL = @"https://mobil.nordea.se/banking-nordea/nordea-c3/login.html";
 NSString * const kMSNordeaTransferFundsURL = @"https://mobil.nordea.se/banking-nordea/nordea-c3/transfer.html";

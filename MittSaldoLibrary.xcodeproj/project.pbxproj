@@ -19,7 +19,7 @@
 		F4100E55162C7D460065B9CA /* MSLICACardServiceProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = F4100E54162C7D460065B9CA /* MSLICACardServiceProxy.m */; };
 		F41A250415D8081B00628213 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F41A250315D8081B00628213 /* Foundation.framework */; };
 		F41A252015D809FE00628213 /* MSLHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F41A251D15D809FE00628213 /* MSLHTTPRequestOperation.m */; };
-		F41A252115D809FE00628213 /* MSNetworkingClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F41A251F15D809FE00628213 /* MSNetworkingClient.m */; };
+		F41A252115D809FE00628213 /* MSLNetworkingClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F41A251F15D809FE00628213 /* MSLNetworkingClient.m */; };
 		F41A257F15D80A0900628213 /* MSLHandelsbankenAccountParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F41A252615D80A0900628213 /* MSLHandelsbankenAccountParser.m */; };
 		F41A258015D80A0900628213 /* MSLHandelsbankenMenuParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F41A252815D80A0900628213 /* MSLHandelsbankenMenuParser.m */; };
 		F41A258115D80A0900628213 /* MSLHandelsbankenServiceDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = F41A252A15D80A0900628213 /* MSLHandelsbankenServiceDescription.m */; };
@@ -133,8 +133,8 @@
 		F41A250715D8081B00628213 /* MittSaldoLibrary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MittSaldoLibrary-Prefix.pch"; sourceTree = "<group>"; };
 		F41A251C15D809FE00628213 /* MSLHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSLHTTPRequestOperation.h; path = MittSaldoLibrary/Networking/MSLHTTPRequestOperation.h; sourceTree = SOURCE_ROOT; };
 		F41A251D15D809FE00628213 /* MSLHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSLHTTPRequestOperation.m; path = MittSaldoLibrary/Networking/MSLHTTPRequestOperation.m; sourceTree = SOURCE_ROOT; };
-		F41A251E15D809FE00628213 /* MSNetworkingClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSNetworkingClient.h; path = MittSaldoLibrary/Networking/MSNetworkingClient.h; sourceTree = SOURCE_ROOT; };
-		F41A251F15D809FE00628213 /* MSNetworkingClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSNetworkingClient.m; path = MittSaldoLibrary/Networking/MSNetworkingClient.m; sourceTree = SOURCE_ROOT; };
+		F41A251E15D809FE00628213 /* MSLNetworkingClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSLNetworkingClient.h; path = MittSaldoLibrary/Networking/MSLNetworkingClient.h; sourceTree = SOURCE_ROOT; };
+		F41A251F15D809FE00628213 /* MSLNetworkingClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSLNetworkingClient.m; path = MittSaldoLibrary/Networking/MSLNetworkingClient.m; sourceTree = SOURCE_ROOT; };
 		F41A252515D80A0900628213 /* MSLHandelsbankenAccountParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLHandelsbankenAccountParser.h; sourceTree = "<group>"; };
 		F41A252615D80A0900628213 /* MSLHandelsbankenAccountParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLHandelsbankenAccountParser.m; sourceTree = "<group>"; };
 		F41A252715D80A0900628213 /* MSLHandelsbankenMenuParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLHandelsbankenMenuParser.h; sourceTree = "<group>"; };
@@ -387,8 +387,8 @@
 			children = (
 				F41A251C15D809FE00628213 /* MSLHTTPRequestOperation.h */,
 				F41A251D15D809FE00628213 /* MSLHTTPRequestOperation.m */,
-				F41A251E15D809FE00628213 /* MSNetworkingClient.h */,
-				F41A251F15D809FE00628213 /* MSNetworkingClient.m */,
+				F41A251E15D809FE00628213 /* MSLNetworkingClient.h */,
+				F41A251F15D809FE00628213 /* MSLNetworkingClient.m */,
 			);
 			name = Networking;
 			path = ../../Classes;
@@ -798,7 +798,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F41A252015D809FE00628213 /* MSLHTTPRequestOperation.m in Sources */,
-				F41A252115D809FE00628213 /* MSNetworkingClient.m in Sources */,
+				F41A252115D809FE00628213 /* MSLNetworkingClient.m in Sources */,
 				F41A257F15D80A0900628213 /* MSLHandelsbankenAccountParser.m in Sources */,
 				F41A258015D80A0900628213 /* MSLHandelsbankenMenuParser.m in Sources */,
 				F41A258115D80A0900628213 /* MSLHandelsbankenServiceDescription.m in Sources */,

@@ -10,7 +10,7 @@
 //  Fork me @ http://github.com/bjornsallarp
 //
 
-#import "MSNetworkingClient.h"
+#import "MSLNetworkingClient.h"
 #import "MSLHTTPRequestOperation.h"
 #import "JSONKit.h"
 

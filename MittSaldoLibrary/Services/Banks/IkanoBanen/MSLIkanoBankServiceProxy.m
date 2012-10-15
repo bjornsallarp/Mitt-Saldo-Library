@@ -11,7 +11,7 @@
 //
 
 #import "MSLIkanoBankServiceProxy.h"
-#import "MSNetworkingClient.h"
+#import "MSLNetworkingClient.h"
 #import "MSLIkanoBankLoginParser.h"
 #import "MSLIkanoBankAccountParser.h"
 

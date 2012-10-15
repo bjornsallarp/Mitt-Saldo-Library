@@ -11,7 +11,7 @@
 //
 
 #import "MSLTicketRikskortetServiceProxy.h"
-#import "MSNetworkingClient.h"
+#import "MSLNetworkingClient.h"
 #import "MSLParsedAccount.h"
 #import "MSLTicketRikskortetLoginParser.h"
 #import "MSLParsedAccount.h"

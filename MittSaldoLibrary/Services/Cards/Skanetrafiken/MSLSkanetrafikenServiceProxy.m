@@ -11,7 +11,7 @@
 //
 
 #import "MSLSkanetrafikenServiceProxy.h"
-#import "MSNetworkingClient.h"
+#import "MSLNetworkingClient.h"
 #import "MSLParsedAccount.h"
 
 NSString * const kMSSkanetrafikenLoginURL = @"https://www.skanetrafiken.se/templates/MSRootPage.aspx?id=2935&epslanguage=SV";

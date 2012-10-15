@@ -13,7 +13,7 @@
 #import "MSICABankenServiceProxy.h"
 #import "MSICABankenLoginParser.h"
 #import "MSICABankenAccountParser.h"
-#import "MSNetworkingClient.h"
+#import "MSLNetworkingClient.h"
 
 NSString * const kMSICABankenLoginURL = @"https://mobil.icabanken.se/logga-in/";
 NSString * const kMSICABankenTransferFundsURL = @"https://mobil.icabanken.se/overfor/";

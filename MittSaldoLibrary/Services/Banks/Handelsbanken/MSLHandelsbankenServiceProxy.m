@@ -14,7 +14,7 @@
 #import "MSLHandelsbankenServiceProxy.h"
 #import "MSLHandelsbankenMenuParser.h"
 #import "MSLHandelsbankenAccountParser.h"
-#import "MSNetworkingClient.h"
+#import "MSLNetworkingClient.h"
 
 NSString * const kMSHandelsbankenLoginURL = @"https://m.handelsbanken.se/";
 
