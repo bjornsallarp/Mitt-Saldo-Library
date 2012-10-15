@@ -49,9 +49,8 @@
                 }
             }
             else if (failure) {
-                //debug_NSLog(@"Login response: %@\r\n\r\n", self.loginResponse);
-                NSLog(@"Balance response: %@\r\n\r\n", requestOperation.responseString);
-                NSLog(@"Cookies: %@\r\n\r\n", self.cookieStorage);
+                debug_NSLog(@"Balance response: %@\r\n\r\n", requestOperation.responseString);
+                debug_NSLog(@"Cookies: %@\r\n\r\n", self.cookieStorage);
                 
                 failure(nil, @"Kunde inte läsa ut saldoinformationen");
             }

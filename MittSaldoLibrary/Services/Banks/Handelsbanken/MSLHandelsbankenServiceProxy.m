@@ -70,12 +70,10 @@ NSString * const kMSHandelsbankenLoginURL = @"https://m.handelsbanken.se/";
                 [self loginStepTwo:nextStepUrl successBlock:success failure:failure];
             }
             else {
-                NSLog(@"Response: %@", requestOperation.responseString);
                 [self callFailureBlock:failure withError:nil andMessage:@"BankLoginFailureAlert"];
             }
         }
         else {
-            NSLog(@"Response: %@", requestOperation.responseString);
             [self callFailureBlock:failure withError:requestOperation.error andMessage:nil];
         }
     }];
@@ -95,15 +93,12 @@ NSString * const kMSHandelsbankenLoginURL = @"https://m.handelsbanken.se/";
             self.menuParser = [[MSLHandelsbankenMenuParser alloc] init];
             if ([self.menuParser parseXMLData:requestOperation.responseData parseError:&error] && [self.menuParser.menuLinks count] >= 2) {
                 [self callSuccessBlock:success];
-                NSLog(@"Post login success!");
             }
             else {
-                NSLog(@"Response: %@", requestOperation.responseString);
                 [self callFailureBlock:failure withError:nil andMessage:@"BankLoginFailureAlert"];
             }
         } 
         else {
-            NSLog(@"Response: %@", requestOperation.responseString);
             [self callFailureBlock:failure withError:requestOperation.error andMessage:nil];
         }
     }];	
