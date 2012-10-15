@@ -1,0 +1,16 @@
+//
+// Prefix header for all source files of the 'MittSaldoLibrary' target in the 'MittSaldoLibrary' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <SystemConfiguration/SystemConfiguration.h>
+    #import <MobileCoreServices/MobileCoreServices.h>
+#endif
+
+// macro for printing log messages only in simulator
+#if TARGET_IPHONE_SIMULATOR
+#define debug_NSLog(format, ...) NSLog(format, ## __VA_ARGS__)
+#else
+#define debug_NSLog(format, ...)
+#endif
