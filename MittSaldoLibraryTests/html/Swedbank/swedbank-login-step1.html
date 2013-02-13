@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="sv">
+    <head>
+        <title>Swedbank mobil</title>
+        <meta http-equiv="Content-Type" content="application/vnd.wap.xhtml+xml; charset=iso-8859-1" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+        <meta name="format-detection" content="telephone=no" />
+        <link href="/banking/swedbank/static-681585140/stocks/css/base.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="/banking/swedbank/static-681585140/stocks/css/iphone.css" rel="stylesheet" type="text/css" media="Screen" />
+        <link rel="apple-touch-icon" href="/banking/swedbank/static-681585140/images/icon.png"/>
+        <script>
+            /*@cc_on @*/
+            /*@
+             document.write('<link href="/banking/swedbank/static-681585140/stocks/css/ie.css" rel="stylesheet" type="text/css" media="Screen" />');
+             if(window.addEventListener ) {
+             window.addEventListener( "load", function() {
+             var spans = document.getElementsByTagName("span");
+             for (var i = 0; i < spans.length; i++) {
+             if((' ' + spans[i].className + ' ').indexOf(' icon ') > -1) {
+             spans[i].innerHTML = ' ';
+             }
+             }
+             });
+             }
+             @*/
+            </script>
+        
+    </head>
+    <body>
+        <div id="header">
+            <img class="logo" alt="Swedbank" src="/banking/swedbank/static-681585140/images/18114_mynt_hk_2.png"/>
+        </div>
+        <div id="content">
+            <h1>Logga in</h1>
+            <form action="/banking/swedbank/loginNext.html" method="post" autocomplete="off">
+                <div class="form-wrapper">
+                    <dl class="clearfix">
+                        <dt><label>Personnummer</label></dt>
+                        <dd><input autocomplete="off" name="xyz" class="numeric"  type="text" pattern="[0-9]*"  maxlength="13" /></dd>
+                    </dl>
+                    <dl class="clearfix">
+                        <dt><label>Logga in med</label></dt>
+                        <dd>
+                            <select name="auth-method">
+                                <option value="code" >Personlig kod</option>
+                                <option value="token" >S&auml;kerhetsdosa</option>
+                                <option value="bus"  >Mobilt BankID</option>
+                            </select>
+                        </dd>
+                    </dl>
+                    <div class="footer list-buttons clearfix">
+                        <input type="hidden" name="_csrf_token" autocomplete="off" value="Rhl51Wejy9n3cJjtp3Q-F1dzPQiL8doMU76cKzKZX-I" />
+                        <input type="hidden" name="busJavascriptSupported" id="busJavascriptSupported" autocomplete="off" value="false" />
+                        <input type="submit" value="Forts&auml;tt" class="button right" />
+                    </div>
+                </div>
+                <iframe id="empty" src="/banking/swedbank/empty.html" width="0" height="0" style="display: none; width: 0; height: 0"></iframe>
+            </form>
+        </div>
+        <div id="nav">
+            <a href="/banking/swedbank/previous.html" id="back">Tillbaka</a>&nbsp; &nbsp;<a href="/banking/swedbank/loginHelp.html" id="rightmenu" class="alt">Hj&auml;lp</a>
+        </div>
+        <script type="text/javascript">
+            var busRedirectUrl = "";
+            </script>
+        <script type="text/javascript" src="/banking/swedbank/static-681585140/js/bus.js">
+            </script>
+        <div id="footer"><p>Swedbank</p></div>
+        <script type="text/javascript">
+            if( document.querySelectorAll && window.addEventListener ) {
+                window.addEventListener( "load", function() {
+                                        for( var i = 0, l = document.querySelectorAll( "label" ); i < l.length; i++ )
+                                        l[i].onclick = function(ev) { ev.stopPropagation(); };
+                                        }, false );
+            }
+            </script>
+        <script type="text/javascript" src="/banking/swedbank/static-681585140/js/clickprotect.js">
+            </script>
+    </body>
+</html>

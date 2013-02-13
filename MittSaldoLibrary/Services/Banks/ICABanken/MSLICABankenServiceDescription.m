@@ -10,10 +10,10 @@
 //  Fork me @ http://github.com/bjornsallarp
 //
 
-#import "MSICABankenServiceDescription.h"
-#import "MSICABankenServiceProxy.h"
+#import "MSLICABankenServiceDescription.h"
+#import "MSLICABankenServiceProxy.h"
 
-@implementation MSICABankenServiceDescription
+@implementation MSLICABankenServiceDescription
 
 - (NSString *)serviceIdentifier
 {
@@ -27,7 +27,19 @@
 
 - (MSLServiceProxyBase *)serviceProxyWithUsername:(NSString *)username andPassword:(NSString *)password
 {
-    return [MSICABankenServiceProxy proxyWithUsername:username andPassword:password];
+    return [MSLICABankenServiceProxy proxyWithUsername:username andPassword:password];
+}
+
+- (BOOL)isValidUsernameForService:(NSString *)username validationMessage:(NSString **)message
+{
+    int length = username.length;
+    
+    if (length == 12) {
+        return YES;
+    }
+    
+    *message = @"ICA Banken kräver personnummer i formatet: ÅÅÅÅMMDDXXXX. Kontrollera att det du angivit verkligen är korrekt.";
+    return NO;
 }
 
 - (NSString *)passwordCaption

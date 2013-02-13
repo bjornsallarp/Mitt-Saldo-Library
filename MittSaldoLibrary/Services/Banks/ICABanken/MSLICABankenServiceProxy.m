@@ -10,9 +10,9 @@
 //  Fork me @ http://github.com/bjornsallarp
 //
 
-#import "MSICABankenServiceProxy.h"
-#import "MSICABankenLoginParser.h"
-#import "MSICABankenAccountParser.h"
+#import "MSLICABankenServiceProxy.h"
+#import "MSLICABankenLoginParser.h"
+#import "MSLICABankenAccountParser.h"
 #import "MSLNetworkingClient.h"
 
 NSString * const kMSICABankenLoginURL = @"https://mobil.icabanken.se/logga-in/";
@@ -24,12 +24,12 @@ NSString * const kMSICABankenAccountListURL = @"https://mobil.icabanken.se/konto
 - (void)callSuccessBlock:(MSLServiceSimpleBlock)successBlock;
 @end
 
-@interface MSICABankenServiceProxy ()
+@interface MSLICABankenServiceProxy ()
 @property (nonatomic, assign) BOOL authenticationRetry;
-@property (nonatomic, strong) MSICABankenLoginParser *loginParser;
+@property (nonatomic, strong) MSLICABankenLoginParser *loginParser;
 @end
 
-@implementation MSICABankenServiceProxy
+@implementation MSLICABankenServiceProxy
 
 - (id)init 
 {
@@ -42,7 +42,7 @@ NSString * const kMSICABankenAccountListURL = @"https://mobil.icabanken.se/konto
 
 + (id)proxyWithUsername:(NSString *)username andPassword:(NSString *)password
 {
-    MSICABankenServiceProxy *login = [[self alloc] init];
+    MSLICABankenServiceProxy *login = [[self alloc] init];
     login.username = username;
     login.password = password;
     
@@ -51,6 +51,11 @@ NSString * const kMSICABankenAccountListURL = @"https://mobil.icabanken.se/konto
 
 - (void)performLoginWithSuccessBlock:(MSLServiceSimpleBlock)success failure:(MSLServiceFailureBlock)failure
 {
+    if ([self.username length] != 12) {
+        failure(nil, @"Ditt personnummer innehåller inte 12 siffror. Nya krav från ICA! Uppdatera personnummer under 'Inställningar'");
+        return;
+    }
+    
     NSURL *loginUrl = [self loginURL];
     
     // ICA wants to warn iPad users that the site might not be working as expected. This will bypass that warning
@@ -71,7 +76,7 @@ NSString * const kMSICABankenAccountListURL = @"https://mobil.icabanken.se/konto
             NSString *fixedMarkup = [requestOperation.responseString stringByReplacingOccurrencesOfString:@"&" withString:@""];
             
             NSError *error = nil;
-            self.loginParser = [[MSICABankenLoginParser alloc] init];
+            self.loginParser = [[MSLICABankenLoginParser alloc] init];
             if ([self.loginParser parseXMLData:[fixedMarkup dataUsingEncoding:NSUTF8StringEncoding] parseError:&error] &&
                 self.loginParser.ssnFieldName && self.loginParser.passwordFieldName) {
                 [self loginStepTwoWithSuccessBlock:success failure:failure];
@@ -138,7 +143,7 @@ NSString * const kMSICABankenAccountListURL = @"https://mobil.icabanken.se/konto
 
 - (id)accountsParser
 {
-    return [[MSICABankenAccountParser alloc] init];
+    return [[MSLICABankenAccountParser alloc] init];
 }
 
 - (NSURL *)loginURL

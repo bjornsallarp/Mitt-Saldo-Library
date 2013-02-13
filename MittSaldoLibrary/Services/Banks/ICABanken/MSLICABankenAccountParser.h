@@ -13,7 +13,7 @@
 #import <Foundation/Foundation.h>
 #import "MSLAccountsParserBase.h"
 
-@interface MSICABankenAccountParser : MSLAccountsParserBase
+@interface MSLICABankenAccountParser : MSLAccountsParserBase
 {
 	// Flags for parsing HTML
     BOOL isParsingName;

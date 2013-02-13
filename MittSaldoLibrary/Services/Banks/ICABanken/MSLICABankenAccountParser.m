@@ -11,15 +11,15 @@
 //
 
 
-#import "MSICABankenAccountParser.h"
+#import "MSLICABankenAccountParser.h"
 #import "MSLParsedAccount.h"
 
-@interface MSICABankenAccountParser()
+@interface MSLICABankenAccountParser()
 @property (nonatomic, strong) MSLParsedAccount *currentAccount;
 @property (nonatomic, strong) NSMutableString *elementInnerContent;
 @end
 
-@implementation MSICABankenAccountParser
+@implementation MSLICABankenAccountParser
 @dynamic elementInnerContent;
 @dynamic currentAccount;
 

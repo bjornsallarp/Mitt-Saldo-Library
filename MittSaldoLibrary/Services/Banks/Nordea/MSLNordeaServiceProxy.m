@@ -40,23 +40,13 @@ NSString * const kMSNordeaAccountListURL = @"https://mobil.nordea.se/banking-nor
     return login;
 }
 
-- (NSData *)cleanStringFromJavascript:(NSString *)html
-{
-    // The pesky inline javascript (not wrapped on CDATA as they should!) need to go for the markup to be valid xhtml
-    NSString *regexToReplaceRawLinks = @"<script[\\d\\D]*?>[\\d\\D]*?</script>";   
-    NSError *error = NULL;
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:regexToReplaceRawLinks
-                                                                           options:NSRegularExpressionCaseInsensitive
-                                                                             error:&error];
-    NSString *cleanHtml = [regex stringByReplacingMatchesInString:html
-                                                          options:0
-                                                            range:NSMakeRange(0, [html length])
-                                                     withTemplate:@""];
-    return [cleanHtml dataUsingEncoding:NSISOLatin1StringEncoding allowLossyConversion:YES];
-}
-
 - (void)performLoginWithSuccessBlock:(MSLServiceSimpleBlock)success failure:(MSLServiceFailureBlock)failure
 {
+    if ([self.username length] != 12) {
+        failure(nil, @"Ditt personnummer innehåller inte 12 siffror. Nya krav från Nordea! Uppdatera personnummer under 'Inställningar'");
+        return;
+    }
+    
     self.loginParser = [[MSLNordeaLoginParser alloc] init];
     
     NSURL *loginUrl = [self loginURL];

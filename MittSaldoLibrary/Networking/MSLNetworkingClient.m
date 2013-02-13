@@ -105,10 +105,11 @@
     
     MSLHTTPRequestOperation *requestOperation = [[MSLHTTPRequestOperation alloc] initWithRequest:request];
     
+    __weak MSLHTTPRequestOperation *_reqOperation = requestOperation;
     [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSArray *newCookies = [NSHTTPCookie cookiesWithResponseHeaderFields:[requestOperation.response allHeaderFields] forURL:requestOperation.request.URL];
+        NSArray *newCookies = [NSHTTPCookie cookiesWithResponseHeaderFields:[_reqOperation.response allHeaderFields] forURL:_reqOperation.request.URL];
         
-        [self setCookies:newCookies inContainer:cookieStorage forURL:requestOperation.request.URL];
+        [self setCookies:newCookies inContainer:cookieStorage forURL:_reqOperation.request.URL];
         
         if (block) {
             block(operation, nil);

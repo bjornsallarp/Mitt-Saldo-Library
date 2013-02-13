@@ -78,7 +78,6 @@
     {
         self.nextLoginStepUrl = [attributeDict valueForKey:@"action"];
     }
-	
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName 

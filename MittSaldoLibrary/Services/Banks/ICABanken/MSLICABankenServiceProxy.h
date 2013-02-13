@@ -11,13 +11,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MSLServiceProxyBase.h"
 
-@interface MSICABankenLoginParser : NSObject<NSXMLParserDelegate>
+@interface MSLICABankenServiceProxy : MSLServiceProxyBase
 
-@property (nonatomic, strong) NSMutableDictionary *hiddenFields;
-@property (nonatomic, strong) NSString *ssnFieldName;
-@property (nonatomic, strong) NSString *passwordFieldName;
-
-- (BOOL)parseXMLData:(NSData *)XMLMarkup parseError:(NSError **)error;
++ (id)proxyWithUsername:(NSString *)username andPassword:(NSString *)password;
+@property (nonatomic, assign) BOOL isIPAD;
 
 @end

@@ -10,14 +10,9 @@
 //  Fork me @ http://github.com/bjornsallarp
 //
 
-#import "MSICABankenLoginParser.h"
+#import "MSLICABankenLoginParser.h"
 
-@implementation MSICABankenLoginParser
-
-- (void)dealloc
-{
-    ;
-}
+@implementation MSLICABankenLoginParser
 
 - (BOOL)parseXMLData:(NSData *)XMLMarkup parseError:(NSError **)error
 {
@@ -77,7 +72,7 @@
         else if ([inputType isEqualToString:@"password"]) {
             self.passwordFieldName = [attributeDict valueForKey:@"name"];
         }
-        else if ([[attributeDict valueForKey:@"maxlength"] isEqualToString:@"11"] && ([inputType isEqualToString:@"tel"] || [inputType isEqualToString:@"customer-id"])) {
+        else if ([[attributeDict valueForKey:@"maxlength"] isEqualToString:@"13"] && ([inputType isEqualToString:@"tel"] || [inputType isEqualToString:@"customer-id"])) {
             self.ssnFieldName = [attributeDict valueForKey:@"name"];
         }
 	}

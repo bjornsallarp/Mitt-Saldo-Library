@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head><meta name="apple-itunes-app" content="app-id=499287475" /><title>
+        ICA Banken
+    </title><meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1, user-scalable=no,width = 320" /><meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" /><meta name="apple-mobile-web-app-capable" content="no" /><meta name="apple-mobile-web-app-status-bar-style" content="default" /><meta name="format-detection" content="telephone=no" /><meta name="WT.ti" content="mobil.icabanken.se/Logga in" /><meta name="WT.cg_n" content="mobil.icabanken.se" /><meta name="WT.cg_s" content="Logga in" />
+        
+        
+        <link rel="stylesheet" type="text/css" href="/Templates/Styles/prod.css?hash=895013" />
+        
+        <script type="text/javascript" src="/Templates/Scripts/prod.js?hash=1846493"></script>
+        
+        <script type="text/javascript">
+            (function ($) {
+             $.fn.ValidateForm = function () {
+             this.bind('submit', function () {
+                       
+                       // clear error data
+                       $.clearErrorData();
+                       
+                       var customerId = $('input.customer-id');
+                       var pinCode = $('input.pin-code');
+                       
+                       var trimmedValue = customerId.val().replace('-', '');
+                       
+                       // check required fields
+                       if (customerId.isEmpty()) {
+                       customerId.addErrorMsgAsText('Du har inte fyllt i något personnummer.');
+                       }
+                       else if (trimmedValue.length != 12) {
+                       customerId.addErrorMsgAsText('Skriv personnumret med 12 siffror.');
+                       }
+                       else if (!customerId.isValidNationalRegNoWithCentury()) {
+                       customerId.addErrorMsgAsText('Det personnummer du har angett är inte giltigt.');
+                       }
+                       
+                       if (pinCode.isEmpty()) {
+                       pinCode.addErrorMsgAsText('Du måste ange ditt lösenord till ICA Banken.');
+                       } else if (!pinCode.isInteger() || pinCode.getTrimmedValue().length != 4) {
+                       pinCode.addErrorMsgAsText('Lösenordet ska bestå av fyra siffror.');
+                       }
+                       
+                       //show error messages and handle submit action (true = continue, false = cancel the form post)
+                       var validationResult = $.handleErrorVisuals();
+                       
+                       if (validationResult)
+                       ShowProgressLayer();
+                       
+                       return validationResult;
+                       });
+             };
+             })(jQuery);
+            
+            jQuery(function ($) {
+                   jQuery(function ($) { $('#JSEnabled').val('1'); });
+                   $('input.pin-code').attr('autocomplete', 'off');
+                   $('form').ValidateForm();
+                   $('input.customer-id').watermarkCustomerIdWithCentury();
+                   });
+            </script>
+    </head>
+    <body class="">
+        <form name="aspnetForm" method="post" action="/logga-in/" id="aspnetForm">
+            <div>
+                <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+                <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+                <input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+                <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTc3MjI0MzMwNA9kFgJmD2QWAgIBEGRkFgQCBQ8WAh4HVmlzaWJsZWhkAgkPZBYGZg9kFgJmDw8WAh4EVGV4dGUWAh4HcGF0dGVybgUGWzAtOV0qZAIBD2QWAmYPD2QWAh8CBQZbMC05XSpkAgIPZBYCZg8PFgIfAQUITG9nZ2EgaW5kZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WAQUzY3RsMDAkRVBpUHJldmlld1NldHRpbmdzJFByZXZpZXdTaG93VmFsaWRhdGlvblRleHRztZD22jGq/CiTYcNTBKfWB7/KVryYy0KC5ni3etPuL48=" />
+            </div>
+            
+            <script type="text/javascript">
+                //<![CDATA[
+                var theForm = document.forms['aspnetForm'];
+                if (!theForm) {
+                    theForm = document.aspnetForm;
+                }
+                function __doPostBack(eventTarget, eventArgument) {
+                    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+                        theForm.__EVENTTARGET.value = eventTarget;
+                        theForm.__EVENTARGUMENT.value = eventArgument;
+                        theForm.submit();
+                    }
+                }
+                //]]>
+                </script>
+            
+            
+            <input id="ApplicationRoot" type="hidden" value="/" />
+            <input id="SessionIsSigned" type="hidden" value="False" />
+            <input id="UpgradeLoginUrl" type="hidden" value="/logga-in/logga-in-med-dosa/" />
+            <input id="SessionTimeoutUrl" type="hidden" value="/Error/Redirector.aspx?RedirectPage=Timeoutamp;Parameter=Timeout" />
+            <input id="CsrfToken" type="hidden" value="" />
+            <input id="PostBackCounter" type="hidden" value="0" />
+            
+            
+            
+            <div id="container">
+                
+                
+                <div id="header" class="shadowed">
+                    <div id="ctl00_HomeButton" class="header-button-left">
+                        <div class="header-button-home-icon"></div>
+                        <a href="http://mobil.icabanken.se/"></a>
+                    </div>
+                    
+                    <div class="header-text-container">
+                        <span id="ctl00_HeaderText" class="header-text truncate">Logga in</span>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+                
+                <div id="header-shadow" class=""></div>
+                
+                
+                
+                
+                
+                <div id="error-list">
+                    
+                </div>
+                
+                <div id="body" class="body">
+                    <input id="JSEnabled" name="JSEnabled" type="hidden" value="" />
+                    <div class="form-body">
+                        <div class="row">
+                            <div class="primary">
+                                <span class="form-label">Personnummer</span>
+                            </div>
+                            <div class="secondary">
+                                
+                                <div class="input-wrapper-outer">
+                                    <div class="input-wrapper">
+                                        <div class="input-wrapper-inner">
+                                            <input type="tel" name="ctl00$MainRegion$CustomerId$txt" maxlength="13" id="ctl00_MainRegion_CustomerId_txt" class="customer-id" pattern="[0-9]*" />
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="primary">
+                                <span class="form-label">Lösenord</span>
+                            </div>
+                            <div class="secondary">
+                                
+                                <div class="input-wrapper-outer">
+                                    <div class="input-wrapper">
+                                        <div class="input-wrapper-inner">
+                                            <input name="ctl00$MainRegion$PinCode$txt" type="password" maxlength="4" id="ctl00_MainRegion_PinCode_txt" class="pin-code" pattern="[0-9]*" />
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="button-row">
+                        
+                        <div class="button-bottom super-wide-button">
+                            
+                            <div class="button">     
+                                <input type="submit" name="ctl00$MainRegion$btnLogin$btn" value="Logga in" id="ctl00_MainRegion_btnLogin_btn" class="icabutton button-text" formnovalidate="true" />        
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                    <div style="clear: both;"></div></div>
+                
+                <div class="footer">
+                    
+                    <span class="footer-text">
+                        <p><span class="red">Gå till <a href="http://www.icabanken.se">www.icabanken.se</a> ICA Banken AB</span> © 2012 Läs mer om <a href="/om-cookies">cookies</a> och <a href="/personuppgifter">personuppgifter</a></p>
+                        
+                    </span>
+                </div>
+            </div>    
+        </form>
+        
+        <div id="progressanimation" style="visibility:hidden" /> 
+        
+        
+        <script type="text/javascript">
+            //<![CDATA[
+            var _tag = new WebTrends('dcswgewh200000c97l0614h2g_2h6v');
+            _tag.dcsGetId();
+            //]]>>
+            </script>
+        <script type="text/javascript">
+            //<![CDATA[
+            _tag.dcsCollect();
+            //]]>>
+            </script>
+        <noscript>
+            <div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="https://icabankensdc.ica.se/dcswgewh200000c97l0614h2g_2h6v/njs.gif?dcsuri=/nojavascriptamp;WT.js=Noamp;WT.tv=8.6.2" /></div>
+        </noscript>
+        
+        
+        
+    </body>
+</html>

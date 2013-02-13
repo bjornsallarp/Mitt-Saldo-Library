@@ -14,6 +14,6 @@
 #import "MSLServiceDescriptionProtocol.h"
 #import "MSLBankDescriptionBase.h"
 
-@interface MSICABankenServiceDescription : MSLBankDescriptionBase<MSLServiceDescriptionProtocol>
+@interface MSLICABankenServiceDescription : MSLBankDescriptionBase<MSLServiceDescriptionProtocol>
 
 @end

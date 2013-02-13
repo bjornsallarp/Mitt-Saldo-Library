@@ -20,6 +20,18 @@
     return @"Nordea";
 }
 
+- (BOOL)isValidUsernameForService:(NSString *)username validationMessage:(NSString **)message
+{
+    int length = username.length;
+    
+    if (length == 12) {
+        return YES;
+    }
+    
+    *message = @"Nordea kräver personnummer i formatet: ÅÅÅÅMMDDXXXX. Kontrollera att det du angivit verkligen är korrekt.";
+    return NO;
+}
+
 - (MSLServiceProxyBase *)serviceProxyWithUsername:(NSString *)username andPassword:(NSString *)password
 {
     return [MSLNordeaServiceProxy proxyWithUsername:username andPassword:password];

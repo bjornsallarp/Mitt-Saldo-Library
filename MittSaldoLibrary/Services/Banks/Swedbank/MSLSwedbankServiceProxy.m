@@ -51,7 +51,8 @@ NSString * const kMSSwedbankAccountListURL = @"https://mobilbank.swedbank.se/ban
     [[MSLNetworkingClient sharedClient] getRequestWithURL:[self loginURL] cookieStorage:self.cookieStorage completionBlock:^(AFHTTPRequestOperation *requestOperation, NSError *error) {
         if ([requestOperation hasAcceptableStatusCode]) {
             
-            [self.loginParser parseXMLData:requestOperation.responseData parseError:nil];
+            NSData *cleanLoginPage = [self cleanStringFromJavascript:requestOperation.responseString];
+            [self.loginParser parseXMLData:cleanLoginPage parseError:nil];
             
             if (self.loginParser.csrf_token == nil || [self.loginParser.csrf_token isEqualToString:@""]) {
                 [self callFailureBlock:failure withError:nil andMessage:@"Kunde inte avkoda inloggningsformuläret"];
@@ -70,7 +71,9 @@ NSString * const kMSSwedbankAccountListURL = @"https://mobilbank.swedbank.se/ban
 {
    [self postLoginWithCompletionBlock:^(AFHTTPRequestOperation *requestOperation, NSError *error) {
        if ([requestOperation hasAcceptableStatusCode]) {
-           [self.loginParser parseXMLData:requestOperation.responseData parseError:nil];
+           
+           NSData *cleanLoginPage = [self cleanStringFromJavascript:requestOperation.responseString];
+           [self.loginParser parseXMLData:cleanLoginPage parseError:nil];
            
            if (self.loginParser.passwordField) {
                [self loginStepThreeWithSuccessBlock:success failure:failure];
@@ -124,6 +127,12 @@ NSString * const kMSSwedbankAccountListURL = @"https://mobilbank.swedbank.se/ban
     
     NSURL *postUrl = [NSURL URLWithString:self.loginParser.nextLoginStepUrl relativeToURL:[NSURL URLWithString:kMSSwedbankLoginURL]];
     [[MSLNetworkingClient sharedClient] postRequestWithURL:postUrl andParameters:params cookieStorage:self.cookieStorage completionBlock:block];
+}
+
+- (NSData *)manipulateAccountBalanceResponse:(NSData *)html
+{
+    NSString *htmlString = [[NSString alloc] initWithData:html encoding:NSUTF8StringEncoding];
+    return [self cleanStringFromJavascript:htmlString];
 }
 
 #pragma mark - Accessors

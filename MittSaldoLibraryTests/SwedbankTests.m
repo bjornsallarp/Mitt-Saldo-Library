@@ -8,6 +8,8 @@
 
 #import "SwedbankTests.h"
 #import "MSLSwedbankAccountParser.h"
+#import "MSLSwedbankLoginParser.h"
+#import "MSLSwedbankServiceProxy.h"
 #import "MSLParsedAccount.h"
 
 @implementation SwedbankTests
@@ -35,6 +37,24 @@
     NSString *filePath = [[NSBundle bundleForClass:[self class]] pathForResource:file ofType:@"html"];
     NSData *htmlData = [NSData dataWithContentsOfFile:filePath];
     return htmlData;
+}
+
+- (void)testCSRParser
+{
+    MSLSwedbankLoginParser *loginParser = [[MSLSwedbankLoginParser alloc] init];
+    
+    NSData *loginPageData = [self dataForFileWithName:@"swedbank-login-step1"];
+    NSString *html = [[NSString alloc] initWithData:loginPageData encoding:NSUTF8StringEncoding];
+
+    MSLSwedbankServiceProxy *proxy = [MSLSwedbankServiceProxy proxyWithUsername:@"asd" andPassword:@"asd"];
+    NSData *cleanLoginPageData = [proxy cleanStringFromJavascript:html];
+    
+    NSError *error = nil;
+    [loginParser parseXMLData:cleanLoginPageData parseError:&error];
+    
+    STAssertEqualObjects(loginParser.csrf_token, @"Rhl51Wejy9n3cJjtp3Q-F1dzPQiL8doMU76cKzKZX-I", @"CSRF token is invalid");
+    
+    STAssertNil(error, @"There should be no errors");
 }
 
 @end
