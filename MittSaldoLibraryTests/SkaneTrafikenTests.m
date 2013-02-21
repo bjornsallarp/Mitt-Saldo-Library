@@ -76,8 +76,16 @@
     STAssertTrue(didWork, @"Should work!");
     STAssertEquals([parsedAccounts count], 3U, @"There should be three accounts");
     
-    MSLParsedAccount *account = [parsedAccounts lastObject];
-    STAssertEqualObjects([account accountName], @"Tobbe Period", nil);
+    __block MSLParsedAccount *account = nil;
+    [parsedAccounts enumerateObjectsUsingBlock:^(MSLParsedAccount *obj, NSUInteger idx, BOOL *stop) {
+        if ([[obj accountName] isEqualToString:@"Tobbe Period"]) {
+            account = obj;
+            *stop = YES;
+        }
+    }];
+
+    STAssertNotNil(account, @"Tobbe Period is missing!");
+    STAssertEqualObjects([account amount], @70.40, nil);
 }
 
 - (void)testCardDropdownRegex

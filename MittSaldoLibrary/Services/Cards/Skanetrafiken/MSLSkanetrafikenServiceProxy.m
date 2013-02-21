@@ -98,7 +98,6 @@ NSString * const kMSSkanetrafikenBalanceURL = @"https://www.skanetrafiken.se/tem
                 return;
             }
             
-            
             if ([requestOperation.responseString rangeOfString:@"ctl00$fullRegion$mainRegion$CardInformation1$mDropDownChooseCard"].location == NSNotFound) {
                 failure(nil, @"Det gick tyvärr inte att läsa ut kortinformationen");
                 return;

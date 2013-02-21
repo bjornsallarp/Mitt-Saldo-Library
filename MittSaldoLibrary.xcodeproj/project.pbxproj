@@ -54,6 +54,9 @@
 		F41A25A515D80A0900628213 /* MSLServiceProxyBase.m in Sources */ = {isa = PBXBuildFile; fileRef = F41A257C15D80A0900628213 /* MSLServiceProxyBase.m */; };
 		F41A25A615D80A0900628213 /* MSLServicesFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F41A257E15D80A0900628213 /* MSLServicesFactory.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F41A25A915D80A1F00628213 /* MSLParsedAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = F41A25A815D80A1F00628213 /* MSLParsedAccount.m */; };
+		F42E5AC5162DC550007851DE /* login-response.json in Resources */ = {isa = PBXBuildFile; fileRef = F42E5AC4162DC550007851DE /* login-response.json */; };
+		F42E5AC7162DCB12007851DE /* cards-response.json in Resources */ = {isa = PBXBuildFile; fileRef = F42E5AC6162DCB12007851DE /* cards-response.json */; };
+		F42E5ACA162DCB57007851DE /* VasttrafikTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F42E5AC9162DCB57007851DE /* VasttrafikTests.m */; };
 		F4A8B019162AC8040093038F /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A8B007162AC8040093038F /* AFHTTPClient.m */; };
 		F4A8B01A162AC8040093038F /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A8B009162AC8040093038F /* AFHTTPRequestOperation.m */; };
 		F4A8B01B162AC8040093038F /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A8B00B162AC8040093038F /* AFImageRequestOperation.m */; };
@@ -70,6 +73,13 @@
 		F4A8B02A162ACAEB0093038F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A8B027162AC9340093038F /* SystemConfiguration.framework */; };
 		F4A8B032162ADBB90093038F /* ILCannedURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A8B02D162AD9900093038F /* ILCannedURLProtocol.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F4A8B036162B03830093038F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A8B033162B03370093038F /* CoreGraphics.framework */; };
+		F4BCFE8D16D6C0190042AE5C /* SLAccessTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BCFE8C16D6C0190042AE5C /* SLAccessTests.m */; };
+		F4BCFE9716D6C0540042AE5C /* MSLSLAccessAccountsParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BCFE9016D6C0540042AE5C /* MSLSLAccessAccountsParser.m */; };
+		F4BCFE9816D6C0540042AE5C /* MSLSLAccessCardServiceDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BCFE9216D6C0540042AE5C /* MSLSLAccessCardServiceDescription.m */; };
+		F4BCFE9916D6C0540042AE5C /* MSLSLAccessCardServiceProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BCFE9416D6C0540042AE5C /* MSLSLAccessCardServiceProxy.m */; };
+		F4BCFE9A16D6C0540042AE5C /* MSLSLAccessLoginParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BCFE9616D6C0540042AE5C /* MSLSLAccessLoginParser.m */; };
+		F4BCFE9E16D6C0FE0042AE5C /* slaccess-accounts.html in Resources */ = {isa = PBXBuildFile; fileRef = F4BCFE9C16D6C0FE0042AE5C /* slaccess-accounts.html */; };
+		F4BCFE9F16D6C0FE0042AE5C /* slaccess-login.html in Resources */ = {isa = PBXBuildFile; fileRef = F4BCFE9D16D6C0FE0042AE5C /* slaccess-login.html */; };
 		F4C0691B16CC16F900203FB4 /* icabanken-login.html in Resources */ = {isa = PBXBuildFile; fileRef = F4C0691A16CC16F900203FB4 /* icabanken-login.html */; };
 		F4C0691E16CC172000203FB4 /* ICABankenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C0691D16CC172000203FB4 /* ICABankenTests.m */; };
 		F4CD0B7D15D811E4002014AD /* MSLAccountsParserBase.m in Sources */ = {isa = PBXBuildFile; fileRef = F41A257A15D80A0900628213 /* MSLAccountsParserBase.m */; };
@@ -213,6 +223,10 @@
 		F41A25A715D80A1F00628213 /* MSLParsedAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLParsedAccount.h; sourceTree = "<group>"; };
 		F41A25A815D80A1F00628213 /* MSLParsedAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLParsedAccount.m; sourceTree = "<group>"; };
 		F41A25C415D80B1500628213 /* MSLServiceDescriptionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLServiceDescriptionProtocol.h; sourceTree = "<group>"; };
+		F42E5AC4162DC550007851DE /* login-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "login-response.json"; path = "html/Vasttrafik/login-response.json"; sourceTree = "<group>"; };
+		F42E5AC6162DCB12007851DE /* cards-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "cards-response.json"; path = "html/Vasttrafik/cards-response.json"; sourceTree = "<group>"; };
+		F42E5AC8162DCB57007851DE /* VasttrafikTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VasttrafikTests.h; sourceTree = "<group>"; };
+		F42E5AC9162DCB57007851DE /* VasttrafikTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VasttrafikTests.m; sourceTree = "<group>"; };
 		F4A8B006162AC8040093038F /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFHTTPClient.h; path = Vendor/AFNetworking/AFNetworking/AFHTTPClient.h; sourceTree = SOURCE_ROOT; };
 		F4A8B007162AC8040093038F /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFHTTPClient.m; path = Vendor/AFNetworking/AFNetworking/AFHTTPClient.m; sourceTree = SOURCE_ROOT; };
 		F4A8B008162AC8040093038F /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperation.h; path = Vendor/AFNetworking/AFNetworking/AFHTTPRequestOperation.h; sourceTree = SOURCE_ROOT; };
@@ -239,6 +253,18 @@
 		F4A8B02C162AD9900093038F /* ILCannedURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ILCannedURLProtocol.h; path = Vendor/ILTesting/ILCannedURLProtocol.h; sourceTree = SOURCE_ROOT; };
 		F4A8B02D162AD9900093038F /* ILCannedURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ILCannedURLProtocol.m; path = Vendor/ILTesting/ILCannedURLProtocol.m; sourceTree = SOURCE_ROOT; };
 		F4A8B033162B03370093038F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F4BCFE8B16D6C0190042AE5C /* SLAccessTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLAccessTests.h; sourceTree = "<group>"; };
+		F4BCFE8C16D6C0190042AE5C /* SLAccessTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLAccessTests.m; sourceTree = "<group>"; };
+		F4BCFE8F16D6C0540042AE5C /* MSLSLAccessAccountsParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLSLAccessAccountsParser.h; sourceTree = "<group>"; };
+		F4BCFE9016D6C0540042AE5C /* MSLSLAccessAccountsParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLSLAccessAccountsParser.m; sourceTree = "<group>"; };
+		F4BCFE9116D6C0540042AE5C /* MSLSLAccessCardServiceDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLSLAccessCardServiceDescription.h; sourceTree = "<group>"; };
+		F4BCFE9216D6C0540042AE5C /* MSLSLAccessCardServiceDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLSLAccessCardServiceDescription.m; sourceTree = "<group>"; };
+		F4BCFE9316D6C0540042AE5C /* MSLSLAccessCardServiceProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLSLAccessCardServiceProxy.h; sourceTree = "<group>"; };
+		F4BCFE9416D6C0540042AE5C /* MSLSLAccessCardServiceProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLSLAccessCardServiceProxy.m; sourceTree = "<group>"; };
+		F4BCFE9516D6C0540042AE5C /* MSLSLAccessLoginParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLSLAccessLoginParser.h; sourceTree = "<group>"; };
+		F4BCFE9616D6C0540042AE5C /* MSLSLAccessLoginParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLSLAccessLoginParser.m; sourceTree = "<group>"; };
+		F4BCFE9C16D6C0FE0042AE5C /* slaccess-accounts.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "slaccess-accounts.html"; sourceTree = "<group>"; };
+		F4BCFE9D16D6C0FE0042AE5C /* slaccess-login.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "slaccess-login.html"; sourceTree = "<group>"; };
 		F4C0691A16CC16F900203FB4 /* icabanken-login.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = "icabanken-login.html"; path = "html/ICABanken/icabanken-login.html"; sourceTree = "<group>"; };
 		F4C0691C16CC172000203FB4 /* ICABankenTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICABankenTests.h; sourceTree = "<group>"; };
 		F4C0691D16CC172000203FB4 /* ICABankenTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICABankenTests.m; sourceTree = "<group>"; };
@@ -540,6 +566,7 @@
 		F41A256515D80A0900628213 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
+				F4BCFE8E16D6C0540042AE5C /* SLAccess */,
 				F402D24015E1474000A5E2DD /* ICACard */,
 				F4EB549615DBFB5C00868000 /* Skanetrafiken */,
 				F41A256615D80A0900628213 /* Coop */,
@@ -598,6 +625,15 @@
 			name = Vendor;
 			sourceTree = "<group>";
 		};
+		F42E5AC2162DC52E007851DE /* Västtrafik */ = {
+			isa = PBXGroup;
+			children = (
+				F42E5AC6162DCB12007851DE /* cards-response.json */,
+				F42E5AC4162DC550007851DE /* login-response.json */,
+			);
+			name = "Västtrafik";
+			sourceTree = "<group>";
+		};
 		F4A8B02B162AD9770093038F /* ILTesting */ = {
 			isa = PBXGroup;
 			children = (
@@ -605,6 +641,31 @@
 				F4A8B02D162AD9900093038F /* ILCannedURLProtocol.m */,
 			);
 			name = ILTesting;
+			sourceTree = "<group>";
+		};
+		F4BCFE8E16D6C0540042AE5C /* SLAccess */ = {
+			isa = PBXGroup;
+			children = (
+				F4BCFE8F16D6C0540042AE5C /* MSLSLAccessAccountsParser.h */,
+				F4BCFE9016D6C0540042AE5C /* MSLSLAccessAccountsParser.m */,
+				F4BCFE9116D6C0540042AE5C /* MSLSLAccessCardServiceDescription.h */,
+				F4BCFE9216D6C0540042AE5C /* MSLSLAccessCardServiceDescription.m */,
+				F4BCFE9316D6C0540042AE5C /* MSLSLAccessCardServiceProxy.h */,
+				F4BCFE9416D6C0540042AE5C /* MSLSLAccessCardServiceProxy.m */,
+				F4BCFE9516D6C0540042AE5C /* MSLSLAccessLoginParser.h */,
+				F4BCFE9616D6C0540042AE5C /* MSLSLAccessLoginParser.m */,
+			);
+			path = SLAccess;
+			sourceTree = "<group>";
+		};
+		F4BCFE9B16D6C0FE0042AE5C /* SLAccess */ = {
+			isa = PBXGroup;
+			children = (
+				F4BCFE9C16D6C0FE0042AE5C /* slaccess-accounts.html */,
+				F4BCFE9D16D6C0FE0042AE5C /* slaccess-login.html */,
+			);
+			name = SLAccess;
+			path = html/SLAccess;
 			sourceTree = "<group>";
 		};
 		F4C0691816CC16E100203FB4 /* ICABanken */ = {
@@ -618,6 +679,8 @@
 		F4EB544515D982EC00868000 /* MittSaldoLibraryTests */ = {
 			isa = PBXGroup;
 			children = (
+				F4BCFE8B16D6C0190042AE5C /* SLAccessTests.h */,
+				F4BCFE8C16D6C0190042AE5C /* SLAccessTests.m */,
 				F4C0691C16CC172000203FB4 /* ICABankenTests.h */,
 				F4C0691D16CC172000203FB4 /* ICABankenTests.m */,
 				F4EB548315DAE8F600868000 /* CoopCardTests.h */,
@@ -628,6 +691,8 @@
 				F4EB548D15DAF2E400868000 /* SkaneTrafikenTests.m */,
 				F4F5692016048ED60086F28A /* SwedbankTests.h */,
 				F4F5692116048ED60086F28A /* SwedbankTests.m */,
+				F42E5AC8162DCB57007851DE /* VasttrafikTests.h */,
+				F42E5AC9162DCB57007851DE /* VasttrafikTests.m */,
 				F4EB544615D982EC00868000 /* Supporting Files */,
 			);
 			path = MittSaldoLibraryTests;
@@ -647,7 +712,9 @@
 		F4EB547915D9933900868000 /* HTML */ = {
 			isa = PBXGroup;
 			children = (
+				F4BCFE9B16D6C0FE0042AE5C /* SLAccess */,
 				F4C0691816CC16E100203FB4 /* ICABanken */,
+				F42E5AC2162DC52E007851DE /* Västtrafik */,
 				F4F5691C16048E480086F28A /* Swedbank */,
 				F4EB548F15DAF2EB00868000 /* Skanetrafiken */,
 				F4EB547A15D9934400868000 /* Handelsbanken */,
@@ -792,6 +859,10 @@
 				F4F5691E16048E480086F28A /* swedbank-account-list.html in Resources */,
 				F4F041E116C2B43400FAAEAE /* swedbank-login-step1.html in Resources */,
 				F4C0691B16CC16F900203FB4 /* icabanken-login.html in Resources */,
+				F42E5AC5162DC550007851DE /* login-response.json in Resources */,
+				F42E5AC7162DCB12007851DE /* cards-response.json in Resources */,
+				F4BCFE9E16D6C0FE0042AE5C /* slaccess-accounts.html in Resources */,
+				F4BCFE9F16D6C0FE0042AE5C /* slaccess-login.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -875,6 +946,10 @@
 				F4100E51162C7C540065B9CA /* MSLNordeaLoginParser.m in Sources */,
 				F4100E53162C7C6D0065B9CA /* MSLNordeaServiceDescription.m in Sources */,
 				F4100E55162C7D460065B9CA /* MSLICACardServiceProxy.m in Sources */,
+				F4BCFE9716D6C0540042AE5C /* MSLSLAccessAccountsParser.m in Sources */,
+				F4BCFE9816D6C0540042AE5C /* MSLSLAccessCardServiceDescription.m in Sources */,
+				F4BCFE9916D6C0540042AE5C /* MSLSLAccessCardServiceProxy.m in Sources */,
+				F4BCFE9A16D6C0540042AE5C /* MSLSLAccessLoginParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -888,6 +963,8 @@
 				F4F5692216048ED60086F28A /* SwedbankTests.m in Sources */,
 				F4A8B032162ADBB90093038F /* ILCannedURLProtocol.m in Sources */,
 				F4C0691E16CC172000203FB4 /* ICABankenTests.m in Sources */,
+				F42E5ACA162DCB57007851DE /* VasttrafikTests.m in Sources */,
+				F4BCFE8D16D6C0190042AE5C /* SLAccessTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -959,9 +1036,9 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MittSaldoLibraryTests/MittSaldoLibraryTests-Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/MittSaldoLibraryTests/usr/include\"";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "MittSaldoLibraryTests/MittSaldoLibraryTests-Info.plist";
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/MittSaldoLibraryTests/usr/lib\"";
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "";
@@ -1055,9 +1132,9 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MittSaldoLibraryTests/MittSaldoLibraryTests-Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/MittSaldoLibraryTests/usr/include\"";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "MittSaldoLibraryTests/MittSaldoLibraryTests-Info.plist";
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/MittSaldoLibraryTests/usr/lib\"";
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "";
@@ -1075,9 +1152,9 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MittSaldoLibraryTests/MittSaldoLibraryTests-Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/MittSaldoLibraryTests/usr/include\"";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "MittSaldoLibraryTests/MittSaldoLibraryTests-Info.plist";
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/MittSaldoLibraryTests/usr/lib\"";
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "";

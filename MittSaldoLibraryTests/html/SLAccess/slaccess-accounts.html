@@ -1,0 +1,285 @@
+
+<!DOCTYPE html>
+<html id="Html" lang="sv">
+<head id="Head">
+	<!--[if IEMobile 7]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<title>
+	Dina SL Access-kort - AB Storstockholms Lokaltrafik Public
+</title><meta name="version" content="2013.1.12.0 (release)" /><meta name="robots" content="noindex,nofollow" /><meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" /><meta name="HandheldFriendly" content="true" /> <!-- blackberry -->
+    <meta name="apple-mobile-web-app-capable" content="yes" /> <!-- bubblan -->
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/Mobile/Frameworks/Default/Images/SL_icon_iPhone4.png" /><link rel="apple-touch-icon-precomposed" sizes="72x72" href="/Mobile/Frameworks/Default/Images/SL_icon_iPad.png" /><link rel="apple-touch-icon-precomposed" href="/Mobile/Frameworks/Default/Images/SL_icon_SmartPhone.png" /><meta property="og:image" content="http://sl.se/ui/images/logo.png" /><meta property="og:image:type" content="image/jpeg" /> <!-- facebook share -->
+    <meta charset="utf-8" />
+        <script type="text/javascript" src="/Mobile/Frameworks/Default/Scripts/jquery-1.6.4.min.js"></script>
+        <script type="text/javascript" src="/Mobile/Frameworks/Default/Scripts/jquery.placeholder.min.js"></script>
+        <script type="text/javascript" src="/Mobile/Common/Scripts/Proxy.min.js"></script>
+        <script type="text/javascript" src="/Mobile/Frameworks/Default/Scripts/Framework.min.js"></script>
+        <script type="text/javascript" src="/Mobile/Common/Scripts/Storage.min.js"></script>
+        <script type="text/javascript" src="/Mobile/Frameworks/Default/Scripts/jquery.tmpl.min.js"></script>
+        <script type="text/javascript" src="/Mobile/Frameworks/Default/Scripts/jquery.mobile-1.0.min.js"></script>
+        <script type="text/javascript" src="/Mobile/Frameworks/Default/Scripts/AndroidFix.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        // Safari IPhone,Android back&forward cache fix, force reload page
+        window.onpageshow = function (evt) { if (evt && evt.persisted && window.location && window.location.reload) { location.reload(); } };
+    </script>
+    <link id="CssFile" type="text/css" media="all" rel="stylesheet" href="/Mobile/Styles/framework_default.min.css" /><meta name="Keywords" content="SL, kollektivtrafik, Stockholm, konst, konst Stockholm, reseplanerare, tunnelbana, pendelt&amp;#229,g, bussar, bl&amp;#229,bussar, Roslagsbanan, Saltsj&amp;#246,banan, Liding&amp;#246,banan, Tv&amp;#228,rbanan, Nockebybanan, busstider, trafikavvikelser" /><meta name="Description" content="Meta" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body>
+<div data-role="page" id="mainPage" data-theme="s">
+    <form name="Form" method="post" action="https://sl.se/sv/Resenar/Mitt-SL/SL-Accesskort1/" id="Form">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTk1MjM0NjczOGRkC74xhzQDz8fvR+178JPkxn5GXQA=" />
+</div>
+
+
+<script src="/Mobile/Frameworks/Default/Scripts/Share.min.js" type="text/javascript"></script>
+	    
+
+<header id="header" class="wrapper">
+	<a id="logo" href="/"><img src="/Mobile/Frameworks/Default/Images/mobil.sl.se.png" alt="SL" /></a>
+
+    <nav id="nav">
+        
+                <ul class="wrapper">
+            
+                <li class="nav nav-1 active"><a href="/sv/Resenar/Planera-resa/">Resa</a></li>
+            
+                <li class="nav nav-2 "><a href="/sv/Storningar/">Störningar</a></li>
+            
+                <li class="nav nav-3 "><a href="/sv/Avgangar/">Avgångar</a></li>
+            
+                <li class="nav nav-4 "><a href="/sv/Resenar/Resegaranti-resevillkor/">Resegaranti</a></li>
+            
+                <li class="nav nav-5 "><a href="/sv/Resenar/Valja-biljett/">Välja biljett</a></li>
+            
+                <li class="nav nav-6 "><a href="/sv/Resenar/Planera-resa/Tidtabeller/">Tidtabeller</a></li>
+            
+                <li class="nav nav-7 "><a href="/sv/Om-SL/Det-har-ar-SL/">Om SL</a></li>
+            
+                    <li id="nav-more"><a href="#">Mer</a></li>
+                </ul>
+            
+    </nav>
+    <div id="navmenu">
+        <ul id="navmenuitems"></ul>
+    </div>
+	<ul id="top-links">
+        
+        
+            <li><a id="PageHeader_MittSlLink" href="https://sl.se/sv/Resenar/Mitt-SL/MittSL-Oversikt/?mobileView=true">Mitt SL</a></li>
+        
+	</ul>
+</header>
+	
+
+		<div id="main" class="fc">
+			
+
+<section id="attention" class="doNotDisplay">
+	<article>
+        <h2 id="attentionTitleHeading"></h2>
+		<p><span id="attentionMessageLiteral"></span> <a id="attentionMoreLink" class="doNotDisplay" href="">Mer info &rsaquo;</a></p>
+	</article>
+</section>
+
+<script type="text/javascript">
+    var suggestionsPowerOff = false;
+
+    var attentionProxy = new SearchProxy();
+    attentionProxy.getAttention({
+        callback: function (msg) {
+            var json = JSON.parse(msg.d);
+            if (json != "") {
+                if (json.TypeAheadSuggestionOff == true || json.TypeAheadSuggestionOff == false) {
+                    suggestionsPowerOff = json.TypeAheadSuggestionOff;
+                }
+                if (json.Header || json.Message) {
+                    $('#attention').removeClass("doNotDisplay");
+                    $('#attentionTitleHeading').text(json.Header);
+                    $('#attentionMessageLiteral').text(json.Message);
+                    if (json.Link) {
+                        $('#attentionMoreLink').attr("href", json.Link);
+                        $('#attentionMoreLink').removeClass("doNotDisplay");
+                    } else {
+                        $('#attentionMoreLink').remove();
+                    }
+                }
+            } else {
+                $('#attention').remove();
+            }
+        }
+    });
+</script>
+			
+    <div id="Article">
+        
+<article class="box">
+	<h1>
+	Dina SL Access-kort
+</h1>
+	<div id="MainPlaceHolder_ctl00_MainBodyLabel">
+	<p>Här ser du de SL Access-kort som är registrerade på ditt konto. Klicka på raden för ett kort så&nbsp;visas:</p>
+<ul>
+<li>vilken eller vilka&nbsp;periodbiljetter som finns på kortet och giltigheten på dem.</li>
+<li>hur mycket pengar som fanns på reskassan igår. Biljetter köpta med reskassan&nbsp;idag, samkörs i systemen under natten och visas här först&nbsp;dagen efter.</li>
+</ul>
+<p>(Senare under 2013 kommer du även&nbsp;att kunna fylla på reskassan samt se och skriva ut&nbsp;din resehistorik här på MittSL.)</p>
+</div>
+</article>
+
+<div id="RegisteredCardsBox" class="box">
+	
+    <h1 class="boxHead">
+		Registrerade kort
+	</h1>
+    <ul class="RegisteredCardsList">
+		<li class="first">
+            <div>
+                <span id="MainPlaceHolder_ctl00_RegisteredCardsRepeater_CardNumberLabel_0">0815068358</span> - <span id="MainPlaceHolder_ctl00_RegisteredCardsRepeater_CardNameLabel_0">Annas kort</span>
+            </div>
+            <ul class="RegisteredCardsSubList">
+			<li class="first">
+                
+                <div id="MainPlaceHolder_ctl00_RegisteredCardsRepeater_CardProductsList_0_TravelPursePanel_0">
+				                
+                    <div>
+                        <span>Saldo reskassa</span> 
+                    </div>
+                    <div>
+                        <span>Belopp:</span> <span id="MainPlaceHolder_ctl00_RegisteredCardsRepeater_CardProductsList_0_TravelPurseAmountLabel_0">0 kr</span>
+                    </div>
+                
+			</div>
+                </li>
+		</ul>
+        </li>
+	</ul>
+
+</div>
+
+<div id="BlockedCardsBox" class="box">
+	
+    <h1 class="boxHead">
+		F&#246;rlustanm&#228;lda SL Access-kort
+	</h1>
+    <ul class="BlockedCardsList">
+		<li class="first">
+            <p>Du har inga förlustanmälda SL Access-kort.</p>
+        </li>
+	</ul>
+
+</div>
+
+        
+<nav id="SubNav" class="box box-Nav">
+    <h2 id="MainPlaceHolder_ctl01_MenuHeader" class="boxHead">
+	Mitt SL
+</h2>
+    <ul><li>
+            <a href="https://sl.se/sv/Resenar/Mitt-SL/MittSL-Oversikt/" target="_top">&#214;versikt</a>
+        </li><li class="sel exp">
+            <a href="https://sl.se/sv/Resenar/Mitt-SL/SL-Accesskort1/" target="_top">Dina SL Access-kort</a>
+        </li><li>
+            <a href="https://sl.se/sv/Resenar/Mitt-SL/Registrera-kort/" target="_top">Registrera kort</a>
+        </li><li>
+            <a href="https://sl.se/sv/Resenar/Mitt-SL/Forlustanmala-kort/" target="_top">F&#246;rlustanm&#228;la kort</a>
+        </li><li>
+            <a href="https://sl.se/sv/Resenar/Mitt-SL/Arenden/">&#196;renden</a>
+        </li><li>
+            <a href="https://sl.se/sv/Resenar/Mitt-SL/Personuppgifter/">Personuppgifter</a>
+        </li><li>
+            <a href="https://sl.se/sv/Resenar/Mitt-SL/Logga-ut/">Logga ut</a>
+        </li></ul>
+</nav>
+    </div>
+
+            
+		</div>
+        <div id="smartCheck"></div>
+		
+<footer id="footer">
+	<div class="fc">
+		<ul class="column">
+	<li class="first">
+				<a id="ctl12_LeftLinkRepeater_Link_0" title="Aktuellt i SL-trafiken" href="/sv/Om-SL/Nyheter/">Nyheter</a>
+			</li><li class="last">
+				<a id="ctl12_LeftLinkRepeater_Link_1" href="/sv/Verktyg/Kontakta-oss/">Kontakta oss</a>
+			</li>
+</ul>
+		<ul class="column last">
+	<li class="first">
+				<a id="ctl12_RightLinkRepeater_Link_0" href="/sv/Verktyg/Lattlast/">Lättläst</a>
+			</li><li class="last">
+				<a id="ctl12_RightLinkRepeater_Link_1" href="/sv/Verktyg/Om-webbplatsen/">Om webbplatsen</a>
+			</li>
+</ul>
+        <ul class="twocolumn">
+	        <li class="first">
+				<a href="https://sl.se/sv/Resenar/Mitt-SL/SL-Accesskort1/?mobileView=false" class="ui-link">Gå till sl.se - för datorer</a>
+			</li>
+            <li class="last">
+				<a href="http://mini.sl.se" class="ui-link">Gå till mini.sl.se - för äldre mobiler</a>
+			</li>
+         </ul>
+	</div>
+	<p>Kundtjänst: <a href="tel:08-6001000">08-600 10 00</a></p>
+	<p><small>&copy; AB Storstockholms Lokaltrafik</small></p>
+</footer>
+    </form>
+</div>
+<div data-role="page" id="overlayPage" data-theme="s">
+    <form id="overLay">
+        <section>
+    	    <header data-role="header" data-add-back-btn="false" data-backbtn="false" id="overlayHeader">
+                <img src="/Mobile/Frameworks/Default/Images/btn-back-tillbaka.png" alt="Tillbaka" class="overlayButton" id="overlayClose" />
+                <h1>undefined</h1>
+	        </header>
+            <article class="box box-form">
+                
+<div id="shareBox" class="overlaySection">	
+    <div id="feedback"></div>
+    <div class="inputBlock"><input type="text" id="recipient" title='Mottagarens e-postadress måste vara korrekt.' placeholder='Mottagarens e-postadress *' class="ui-input-text" /></div>
+    <div class="inputBlock"><input type="text" id="name" title='Namn måste vara ifyllt.' placeholder='Ditt namn *' class="ui-input-text" /></div>
+    <div class="inputBlock"><input type="text" id="sender" title='Din e-postadress måste vara ifylld.' placeholder='Din e-postadress *' class="ui-input-text" /></div>
+    <div class="inputBlock">
+        <label for="message" class="ui-hidden-accessible">message</label>
+        <textarea id="message" placeholder='Meddelande' name="messageName" class="ui-input-text"></textarea>
+    </div>
+    <div class="buttonBlock fc">
+        <a class="btn ui-link" id="sendMail">Skicka</a>
+    </div>
+</div>
+                
+                
+            </article>
+        </section>
+    </form>
+</div>
+
+<!-- SiteCatalyst code version: H.24.1.
+Copyright 1996-2011 Adobe, Inc. All Rights Reserved
+More info available at http://www.omniture.com -->
+
+
+
+<div id="ctl14_prodPanel">
+	
+    <script type="text/javascript" src="/Mobile/Frameworks/Default/Scripts/s_codeProd.js"></script>
+    <script type="text/javascript"><!--
+        /* You may give each page an identifying name, server, and channel on
+        the next lines. */
+        s.pageName = "Dina SL Access-kort (1610)";
+        s.server = "sl.se";
+        s.channel = "Resenär";
+        s.hier1 = "Resenar|Mitt-SL|SL-Accesskort1";
+        /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+        var s_code = s.t(); if (s_code) document.write(s_code)//--></script>
+    <script type="text/javascript"><!--
+        if (navigator.appVersion.indexOf('MSIE') >= 0) document.write(unescape('%3C') + '\!-' + '-')
+    //--></script><noscript><img src="http://storstockholmslokaltrafik.112.2o7.net/b/ss/storstockholmslokaltrafiktouchguiprod/1/H.24.1--NS/0" height="1" width="1" border="0" alt="" /></noscript><!--/DO NOT REMOVE/-->
+    <!-- End SiteCatalyst code version: H.24.1. -->
+
+</div>
+</body>
+</html>
+

@@ -1,0 +1,33 @@
+{
+    "d": {
+        "__type": "ResponseLogin:#Customer.CustomerServices.EPiServerWs.ServiceLogicLayer.DataContracts",
+        "RDC_Successful": true,
+        "RDC_Messages": [],
+        "IsCompany": false,
+        "IsLoggedIn": true,
+        "IsTrafficDisturbanceGroup": false,
+        "IsValidWebShopUser": true,
+        "MyPageSettings": {
+            "__type": "MyPageSettings:#Customer.CustomerUtil.Common.Entities",
+            "MyPageSettingsModules": [
+                {
+                    "__type": "MyPageSettingsModule:#Customer.CustomerUtil.Common.Entities",
+                    "Display": true,
+                    "Name": "MyBookmarks"
+                },
+                {
+                    "__type": "MyPageSettingsModule:#Customer.CustomerUtil.Common.Entities",
+                    "Display": true,
+                    "Name": "News"
+                },
+                {
+                    "__type": "MyPageSettingsModule:#Customer.CustomerUtil.Common.Entities",
+                    "Display": true,
+                    "Name": "TrafficSituations"
+                }
+            ],
+            "ZoomMapOnScroll": false
+        },
+        "TrafficDisturbanceUrl": "#!/reseinformation/administrera-trafikforandringar/"
+    }
+}

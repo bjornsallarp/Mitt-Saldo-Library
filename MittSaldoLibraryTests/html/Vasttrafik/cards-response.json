@@ -1,0 +1,70 @@
+{
+    "d": {
+        "__type": "ResponseGetVtkCardsWithPaging:#Customer.CustomerServices.EPiServerWs.ServiceLogicLayer.DataContracts",
+        "RDC_Successful": true,
+        "RDC_Messages": [],
+        "Cards": [
+            {
+                "__type": "VtkCard:#Customer.CustomerServices.EPiServerWs.ServiceLogicLayer.DataContracts",
+                "EntityId": 0,
+                "EntityType": null,
+                "Charges": [
+                    {
+                        "__type": "VtkCardCharge:#Customer.CustomerServices.EPiServerWs.ServiceLogicLayer.DataContracts",
+                        "EntityId": 0,
+                        "EntityType": null,
+                        "Amount": 11710,
+                        "AutoLoadCanBeDisabledInstantly": false,
+                        "AutoLoadEnabled": false,
+                        "Buyable": true,
+                        "CardId": 54890,
+                        "ChargeName": "Kontoladdning",
+                        "DIBSTicketNr": "",
+                        "ExpiryTime": "/Date(253402297199999+0100)/",
+                        "IsAccount": true,
+                        "ItemInBasket": false,
+                        "LastActivityDateTime": "/Date(1349983987000+0200)/",
+                        "Name": "Kontoladdning",
+                        "PendingAutoload": false,
+                        "ProdSerialNumber": 1,
+                        "ProductAgeGroupId": 1,
+                        "ProductGroupId": "28",
+                        "Status": 2,
+                        "SupportsAutoLoad": true,
+                        "Type": 0
+                    },
+                    {
+                        "__type": "VtkCardCharge:#Customer.CustomerServices.EPiServerWs.ServiceLogicLayer.DataContracts",
+                        "EntityId": 0,
+                        "EntityType": null,
+                        "Amount": 0,
+                        "AutoLoadCanBeDisabledInstantly": false,
+                        "AutoLoadEnabled": false,
+                        "Buyable": true,
+                        "CardId": 54890,
+                        "ChargeName": "Göteborg 30 Vux",
+                        "DIBSTicketNr": "",
+                        "ExpiryTime": "/Date(1352329198000+0100)/",
+                        "IsAccount": false,
+                        "ItemInBasket": false,
+                        "LastActivityDateTime": "/Date(1350277160000+0200)/",
+                        "Name": "Göteborg 30 Vux",
+                        "PendingAutoload": false,
+                        "ProdSerialNumber": 6,
+                        "ProductAgeGroupId": 1,
+                        "ProductGroupId": "33",
+                        "Status": 2,
+                        "SupportsAutoLoad": true,
+                        "Type": 1
+                    }
+                ],
+                "ExpireDate": "/Date(1456009200000+0100)/",
+                "Id": 54890,
+                "Name": "josefine",
+                "Number": "240141778712392",
+                "RefundType": null
+            }
+        ],
+        "TotalNumberOfCards": 1
+    }
+}
