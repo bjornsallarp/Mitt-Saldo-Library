@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A35E49A1794540E00A2C83A /* lansforsakringar-accounts.html in Resources */ = {isa = PBXBuildFile; fileRef = 5A35E4991794540E00A2C83A /* lansforsakringar-accounts.html */; };
+		5A892C6717943FAB009B9E63 /* LFTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A892C6617943FAB009B9E63 /* LFTests.m */; };
+		5A892C9117943FD7009B9E63 /* lansforsakringar-login.html in Resources */ = {isa = PBXBuildFile; fileRef = 5A892C9017943FD7009B9E63 /* lansforsakringar-login.html */; };
+		5AC1DF871796B6A600584AF8 /* NSString+MSLHtmlStripScriptTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC1DF861796B6A600584AF8 /* NSString+MSLHtmlStripScriptTag.m */; };
+		5AC1DF8A1796B6F700584AF8 /* NSScanner+MSLScannerHtmlHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC1DF891796B6F700584AF8 /* NSScanner+MSLScannerHtmlHelper.m */; };
+		5AC1E01D1798070200584AF8 /* MSLHiddenInputsParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC1E01C1798070200584AF8 /* MSLHiddenInputsParser.m */; };
 		F402D23615E10DD400A5E2DD /* SkanetrafikenCardInformation-1728728941.html in Resources */ = {isa = PBXBuildFile; fileRef = F402D23515E10DD400A5E2DD /* SkanetrafikenCardInformation-1728728941.html */; };
 		F402D23815E10DEC00A5E2DD /* SkanetrafikenCardInformation-3084242189.html in Resources */ = {isa = PBXBuildFile; fileRef = F402D23715E10DEC00A5E2DD /* SkanetrafikenCardInformation-3084242189.html */; };
 		F402D23B15E140C300A5E2DD /* MSLBankDescriptionBase.m in Sources */ = {isa = PBXBuildFile; fileRef = F402D23A15E140C300A5E2DD /* MSLBankDescriptionBase.m */; };
@@ -32,7 +38,6 @@
 		F41A258B15D80A0900628213 /* MSLIkanoBankServiceDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = F41A254015D80A0900628213 /* MSLIkanoBankServiceDescription.m */; };
 		F41A258C15D80A0900628213 /* MSLIkanoBankServiceProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = F41A254215D80A0900628213 /* MSLIkanoBankServiceProxy.m */; };
 		F41A258D15D80A0900628213 /* MSLLansforsakringarAccountParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F41A254515D80A0900628213 /* MSLLansforsakringarAccountParser.m */; };
-		F41A258E15D80A0900628213 /* MSLLansforsakringarLoginParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F41A254715D80A0900628213 /* MSLLansforsakringarLoginParser.m */; };
 		F41A258F15D80A0900628213 /* MSLLansforsakringarServiceDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = F41A254915D80A0900628213 /* MSLLansforsakringarServiceDescription.m */; };
 		F41A259115D80A0900628213 /* MSLNordeaAccountParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F41A254E15D80A0900628213 /* MSLNordeaAccountParser.m */; };
 		F41A259415D80A0900628213 /* MSLNordeaServiceProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = F41A255415D80A0900628213 /* MSLNordeaServiceProxy.m */; };
@@ -74,10 +79,8 @@
 		F4A8B032162ADBB90093038F /* ILCannedURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A8B02D162AD9900093038F /* ILCannedURLProtocol.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F4A8B036162B03830093038F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A8B033162B03370093038F /* CoreGraphics.framework */; };
 		F4BCFE8D16D6C0190042AE5C /* SLAccessTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BCFE8C16D6C0190042AE5C /* SLAccessTests.m */; };
-		F4BCFE9716D6C0540042AE5C /* MSLSLAccessAccountsParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BCFE9016D6C0540042AE5C /* MSLSLAccessAccountsParser.m */; };
 		F4BCFE9816D6C0540042AE5C /* MSLSLAccessCardServiceDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BCFE9216D6C0540042AE5C /* MSLSLAccessCardServiceDescription.m */; };
 		F4BCFE9916D6C0540042AE5C /* MSLSLAccessCardServiceProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BCFE9416D6C0540042AE5C /* MSLSLAccessCardServiceProxy.m */; };
-		F4BCFE9A16D6C0540042AE5C /* MSLSLAccessLoginParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BCFE9616D6C0540042AE5C /* MSLSLAccessLoginParser.m */; };
 		F4BCFE9E16D6C0FE0042AE5C /* slaccess-accounts.html in Resources */ = {isa = PBXBuildFile; fileRef = F4BCFE9C16D6C0FE0042AE5C /* slaccess-accounts.html */; };
 		F4BCFE9F16D6C0FE0042AE5C /* slaccess-login.html in Resources */ = {isa = PBXBuildFile; fileRef = F4BCFE9D16D6C0FE0042AE5C /* slaccess-login.html */; };
 		F4C0691B16CC16F900203FB4 /* icabanken-login.html in Resources */ = {isa = PBXBuildFile; fileRef = F4C0691A16CC16F900203FB4 /* icabanken-login.html */; };
@@ -127,6 +130,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5A35E4991794540E00A2C83A /* lansforsakringar-accounts.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = "lansforsakringar-accounts.html"; path = "html/Lansforsakringar/lansforsakringar-accounts.html"; sourceTree = "<group>"; };
+		5A892C6517943FAB009B9E63 /* LFTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFTests.h; sourceTree = "<group>"; };
+		5A892C6617943FAB009B9E63 /* LFTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFTests.m; sourceTree = "<group>"; };
+		5A892C9017943FD7009B9E63 /* lansforsakringar-login.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = "lansforsakringar-login.html"; path = "html/Lansforsakringar/lansforsakringar-login.html"; sourceTree = "<group>"; };
+		5AC1DF851796B6A600584AF8 /* NSString+MSLHtmlStripScriptTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+MSLHtmlStripScriptTag.h"; path = "Categories/NSString+MSLHtmlStripScriptTag.h"; sourceTree = "<group>"; };
+		5AC1DF861796B6A600584AF8 /* NSString+MSLHtmlStripScriptTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+MSLHtmlStripScriptTag.m"; path = "Categories/NSString+MSLHtmlStripScriptTag.m"; sourceTree = "<group>"; };
+		5AC1DF881796B6F700584AF8 /* NSScanner+MSLScannerHtmlHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSScanner+MSLScannerHtmlHelper.h"; path = "Categories/NSScanner+MSLScannerHtmlHelper.h"; sourceTree = "<group>"; };
+		5AC1DF891796B6F700584AF8 /* NSScanner+MSLScannerHtmlHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSScanner+MSLScannerHtmlHelper.m"; path = "Categories/NSScanner+MSLScannerHtmlHelper.m"; sourceTree = "<group>"; };
+		5AC1E01B1798070200584AF8 /* MSLHiddenInputsParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSLHiddenInputsParser.h; path = Classes/MSLHiddenInputsParser.h; sourceTree = "<group>"; };
+		5AC1E01C1798070200584AF8 /* MSLHiddenInputsParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSLHiddenInputsParser.m; path = Classes/MSLHiddenInputsParser.m; sourceTree = "<group>"; };
 		F402D23515E10DD400A5E2DD /* SkanetrafikenCardInformation-1728728941.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = "SkanetrafikenCardInformation-1728728941.html"; path = "html/Skanetrafiken/SkanetrafikenCardInformation-1728728941.html"; sourceTree = "<group>"; };
 		F402D23715E10DEC00A5E2DD /* SkanetrafikenCardInformation-3084242189.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = "SkanetrafikenCardInformation-3084242189.html"; path = "html/Skanetrafiken/SkanetrafikenCardInformation-3084242189.html"; sourceTree = "<group>"; };
 		F402D23915E140C300A5E2DD /* MSLBankDescriptionBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLBankDescriptionBase.h; sourceTree = "<group>"; };
@@ -173,8 +186,6 @@
 		F41A254215D80A0900628213 /* MSLIkanoBankServiceProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLIkanoBankServiceProxy.m; sourceTree = "<group>"; };
 		F41A254415D80A0900628213 /* MSLLansforsakringarAccountParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLLansforsakringarAccountParser.h; sourceTree = "<group>"; };
 		F41A254515D80A0900628213 /* MSLLansforsakringarAccountParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLLansforsakringarAccountParser.m; sourceTree = "<group>"; };
-		F41A254615D80A0900628213 /* MSLLansforsakringarLoginParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLLansforsakringarLoginParser.h; sourceTree = "<group>"; };
-		F41A254715D80A0900628213 /* MSLLansforsakringarLoginParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLLansforsakringarLoginParser.m; sourceTree = "<group>"; };
 		F41A254815D80A0900628213 /* MSLLansforsakringarServiceDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLLansforsakringarServiceDescription.h; sourceTree = "<group>"; };
 		F41A254915D80A0900628213 /* MSLLansforsakringarServiceDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLLansforsakringarServiceDescription.m; sourceTree = "<group>"; };
 		F41A254A15D80A0900628213 /* MSLLansforsakringarServiceProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLLansforsakringarServiceProxy.h; sourceTree = "<group>"; };
@@ -255,14 +266,10 @@
 		F4A8B033162B03370093038F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F4BCFE8B16D6C0190042AE5C /* SLAccessTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLAccessTests.h; sourceTree = "<group>"; };
 		F4BCFE8C16D6C0190042AE5C /* SLAccessTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLAccessTests.m; sourceTree = "<group>"; };
-		F4BCFE8F16D6C0540042AE5C /* MSLSLAccessAccountsParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLSLAccessAccountsParser.h; sourceTree = "<group>"; };
-		F4BCFE9016D6C0540042AE5C /* MSLSLAccessAccountsParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLSLAccessAccountsParser.m; sourceTree = "<group>"; };
 		F4BCFE9116D6C0540042AE5C /* MSLSLAccessCardServiceDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLSLAccessCardServiceDescription.h; sourceTree = "<group>"; };
 		F4BCFE9216D6C0540042AE5C /* MSLSLAccessCardServiceDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLSLAccessCardServiceDescription.m; sourceTree = "<group>"; };
 		F4BCFE9316D6C0540042AE5C /* MSLSLAccessCardServiceProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLSLAccessCardServiceProxy.h; sourceTree = "<group>"; };
 		F4BCFE9416D6C0540042AE5C /* MSLSLAccessCardServiceProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLSLAccessCardServiceProxy.m; sourceTree = "<group>"; };
-		F4BCFE9516D6C0540042AE5C /* MSLSLAccessLoginParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLSLAccessLoginParser.h; sourceTree = "<group>"; };
-		F4BCFE9616D6C0540042AE5C /* MSLSLAccessLoginParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLSLAccessLoginParser.m; sourceTree = "<group>"; };
 		F4BCFE9C16D6C0FE0042AE5C /* slaccess-accounts.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "slaccess-accounts.html"; sourceTree = "<group>"; };
 		F4BCFE9D16D6C0FE0042AE5C /* slaccess-login.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "slaccess-login.html"; sourceTree = "<group>"; };
 		F4C0691A16CC16F900203FB4 /* icabanken-login.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = "icabanken-login.html"; path = "html/ICABanken/icabanken-login.html"; sourceTree = "<group>"; };
@@ -324,6 +331,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A892C6417917DD3009B9E63 /* Lansforsakringar */ = {
+			isa = PBXGroup;
+			children = (
+				5A35E4991794540E00A2C83A /* lansforsakringar-accounts.html */,
+				5A892C9017943FD7009B9E63 /* lansforsakringar-login.html */,
+			);
+			name = Lansforsakringar;
+			sourceTree = "<group>";
+		};
+		5AC1DF841796B68900584AF8 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				5AC1DF851796B6A600584AF8 /* NSString+MSLHtmlStripScriptTag.h */,
+				5AC1DF861796B6A600584AF8 /* NSString+MSLHtmlStripScriptTag.m */,
+				5AC1DF881796B6F700584AF8 /* NSScanner+MSLScannerHtmlHelper.h */,
+				5AC1DF891796B6F700584AF8 /* NSScanner+MSLScannerHtmlHelper.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		5AC1E01A179806C400584AF8 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5AC1E01B1798070200584AF8 /* MSLHiddenInputsParser.h */,
+				5AC1E01C1798070200584AF8 /* MSLHiddenInputsParser.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 		F402D24015E1474000A5E2DD /* ICACard */ = {
 			isa = PBXGroup;
 			children = (
@@ -397,6 +433,8 @@
 		F41A250515D8081B00628213 /* MittSaldoLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				5AC1E01A179806C400584AF8 /* Classes */,
+				5AC1DF841796B68900584AF8 /* Categories */,
 				F41A25AA15D80A5000628213 /* Vendor */,
 				F41A251B15D8085300628213 /* Networking */,
 				F41A252215D80A0900628213 /* Services */,
@@ -510,8 +548,6 @@
 			children = (
 				F41A254415D80A0900628213 /* MSLLansforsakringarAccountParser.h */,
 				F41A254515D80A0900628213 /* MSLLansforsakringarAccountParser.m */,
-				F41A254615D80A0900628213 /* MSLLansforsakringarLoginParser.h */,
-				F41A254715D80A0900628213 /* MSLLansforsakringarLoginParser.m */,
 				F41A254815D80A0900628213 /* MSLLansforsakringarServiceDescription.h */,
 				F41A254915D80A0900628213 /* MSLLansforsakringarServiceDescription.m */,
 				F41A254A15D80A0900628213 /* MSLLansforsakringarServiceProxy.h */,
@@ -646,14 +682,10 @@
 		F4BCFE8E16D6C0540042AE5C /* SLAccess */ = {
 			isa = PBXGroup;
 			children = (
-				F4BCFE8F16D6C0540042AE5C /* MSLSLAccessAccountsParser.h */,
-				F4BCFE9016D6C0540042AE5C /* MSLSLAccessAccountsParser.m */,
 				F4BCFE9116D6C0540042AE5C /* MSLSLAccessCardServiceDescription.h */,
 				F4BCFE9216D6C0540042AE5C /* MSLSLAccessCardServiceDescription.m */,
 				F4BCFE9316D6C0540042AE5C /* MSLSLAccessCardServiceProxy.h */,
 				F4BCFE9416D6C0540042AE5C /* MSLSLAccessCardServiceProxy.m */,
-				F4BCFE9516D6C0540042AE5C /* MSLSLAccessLoginParser.h */,
-				F4BCFE9616D6C0540042AE5C /* MSLSLAccessLoginParser.m */,
 			);
 			path = SLAccess;
 			sourceTree = "<group>";
@@ -683,6 +715,8 @@
 				F4BCFE8C16D6C0190042AE5C /* SLAccessTests.m */,
 				F4C0691C16CC172000203FB4 /* ICABankenTests.h */,
 				F4C0691D16CC172000203FB4 /* ICABankenTests.m */,
+				5A892C6517943FAB009B9E63 /* LFTests.h */,
+				5A892C6617943FAB009B9E63 /* LFTests.m */,
 				F4EB548315DAE8F600868000 /* CoopCardTests.h */,
 				F4EB548415DAE8F600868000 /* CoopCardTests.m */,
 				F4EB544B15D982EC00868000 /* HandelsbankenTests.h */,
@@ -712,6 +746,7 @@
 		F4EB547915D9933900868000 /* HTML */ = {
 			isa = PBXGroup;
 			children = (
+				5A892C6417917DD3009B9E63 /* Lansforsakringar */,
 				F4BCFE9B16D6C0FE0042AE5C /* SLAccess */,
 				F4C0691816CC16E100203FB4 /* ICABanken */,
 				F42E5AC2162DC52E007851DE /* Västtrafik */,
@@ -863,6 +898,8 @@
 				F42E5AC7162DCB12007851DE /* cards-response.json in Resources */,
 				F4BCFE9E16D6C0FE0042AE5C /* slaccess-accounts.html in Resources */,
 				F4BCFE9F16D6C0FE0042AE5C /* slaccess-login.html in Resources */,
+				5A892C9117943FD7009B9E63 /* lansforsakringar-login.html in Resources */,
+				5A35E49A1794540E00A2C83A /* lansforsakringar-accounts.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -903,7 +940,6 @@
 				F41A258B15D80A0900628213 /* MSLIkanoBankServiceDescription.m in Sources */,
 				F41A258C15D80A0900628213 /* MSLIkanoBankServiceProxy.m in Sources */,
 				F41A258D15D80A0900628213 /* MSLLansforsakringarAccountParser.m in Sources */,
-				F41A258E15D80A0900628213 /* MSLLansforsakringarLoginParser.m in Sources */,
 				F41A258F15D80A0900628213 /* MSLLansforsakringarServiceDescription.m in Sources */,
 				F41A259115D80A0900628213 /* MSLNordeaAccountParser.m in Sources */,
 				F41A259415D80A0900628213 /* MSLNordeaServiceProxy.m in Sources */,
@@ -946,10 +982,11 @@
 				F4100E51162C7C540065B9CA /* MSLNordeaLoginParser.m in Sources */,
 				F4100E53162C7C6D0065B9CA /* MSLNordeaServiceDescription.m in Sources */,
 				F4100E55162C7D460065B9CA /* MSLICACardServiceProxy.m in Sources */,
-				F4BCFE9716D6C0540042AE5C /* MSLSLAccessAccountsParser.m in Sources */,
 				F4BCFE9816D6C0540042AE5C /* MSLSLAccessCardServiceDescription.m in Sources */,
 				F4BCFE9916D6C0540042AE5C /* MSLSLAccessCardServiceProxy.m in Sources */,
-				F4BCFE9A16D6C0540042AE5C /* MSLSLAccessLoginParser.m in Sources */,
+				5AC1DF871796B6A600584AF8 /* NSString+MSLHtmlStripScriptTag.m in Sources */,
+				5AC1DF8A1796B6F700584AF8 /* NSScanner+MSLScannerHtmlHelper.m in Sources */,
+				5AC1E01D1798070200584AF8 /* MSLHiddenInputsParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -965,6 +1002,7 @@
 				F4C0691E16CC172000203FB4 /* ICABankenTests.m in Sources */,
 				F42E5ACA162DCB57007851DE /* VasttrafikTests.m in Sources */,
 				F4BCFE8D16D6C0190042AE5C /* SLAccessTests.m in Sources */,
+				5A892C6717943FAB009B9E63 /* LFTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

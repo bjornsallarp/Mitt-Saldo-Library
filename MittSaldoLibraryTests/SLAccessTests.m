@@ -7,26 +7,25 @@
 //
 
 #import "SLAccessTests.h"
-#import "MSLSLAccessLoginParser.h"
+#import "MSLHiddenInputsParser.h"
 
 @implementation SLAccessTests
 
 - (void)testLoginParser
 {
-    MSLSLAccessLoginParser *parser = [[MSLSLAccessLoginParser alloc] init];
+    MSLHiddenInputsParser *parser = [[MSLHiddenInputsParser alloc] init];
       
     NSData *htmlData = [self dataForFileWithName:@"slaccess-login"];
-    NSString *htmlMarkup = [[NSString alloc] initWithData:htmlData encoding:NSUTF8StringEncoding];
 
-    [parser parseHtmlString:htmlMarkup];
+    NSError *error;
+    [parser parseXMLData:htmlData parseError:&error];
+    
+    STAssertNil(error, @"Parsing should not trigger errors");
     
     STAssertEquals(3U, [parser.hiddenFields count], nil);
     STAssertEqualObjects([parser.hiddenFields valueForKey:@"__EVENTVALIDATION"], @"/wEWBALO7/S1BwKH7OmICALPwdD+AQLs/IyWBQa9GlnQfO8MbBmgkSZ/2XKtcPP9", nil);
     STAssertEqualObjects([parser.hiddenFields valueForKey:@"__VIEWSTATE"], @"/wEPDwUJMzA4NjM4MjQ3ZGS6FKdxhpnl3HIrv3v8bYWYSJrKFw==", nil);
     STAssertEqualObjects([parser.hiddenFields valueForKey:@"viewmode"], @"mobile", nil);
-    
-    STAssertEqualObjects(parser.ssnFieldName, @"ctl00$MainPlaceHolder$ctl00$UsernameTextBox", nil);
-    STAssertEqualObjects(parser.passwordFieldName, @"ctl00$MainPlaceHolder$ctl00$PasswordTextBox", nil);
 }
 
 - (NSData *)dataForFileWithName:(NSString *)file

@@ -14,6 +14,7 @@
 #import "MSLNordeaLoginParser.h"
 #import "MSLNordeaAccountParser.h"
 #import "MSLNetworkingClient.h"
+#import "NSString+MSLHtmlStripScriptTag.h"
 
 NSString * const kMSNordeaLoginURL = @"https://mobil.nordea.se/banking-nordea/nordea-c3/login.html";
 NSString * const kMSNordeaTransferFundsURL = @"https://mobil.nordea.se/banking-nordea/nordea-c3/transfer.html";
@@ -53,7 +54,7 @@ NSString * const kMSNordeaAccountListURL = @"https://mobil.nordea.se/banking-nor
     [[MSLNetworkingClient sharedClient] getRequestWithURL:loginUrl cookieStorage:self.cookieStorage completionBlock:^(AFHTTPRequestOperation *requestOperation, NSError *error) {
         if ([requestOperation hasAcceptableStatusCode]) {
             
-            NSData *xhtmlData = [self cleanStringFromJavascript:requestOperation.responseString];
+            NSData *xhtmlData = [requestOperation.responseString cleanStringFromJavascriptWithEncoding:NSISOLatin1StringEncoding];
             [self.loginParser parseXMLData:xhtmlData parseError:nil];
             
             if (self.loginParser.csrf_token == nil || [self.loginParser.csrf_token isEqualToString:@""]) {
@@ -90,7 +91,7 @@ NSString * const kMSNordeaAccountListURL = @"https://mobil.nordea.se/banking-nor
             else if (!self.captchaCode && [requestOperation.responseString rangeOfString:@"captcha.png"].location != NSNotFound) {
                 
                 // We hit the login limit, fear not, hi-res captchas can be handled easily!
-                NSData *xhtmlData = [self cleanStringFromJavascript:requestOperation.responseString];
+                NSData *xhtmlData = [requestOperation.responseString cleanStringFromJavascriptWithEncoding:NSISOLatin1StringEncoding];
                 
                 [self.loginParser parseXMLData:xhtmlData parseError:nil];
                 if (self.loginParser.csrf_token == nil || [self.loginParser.csrf_token isEqualToString:@""]) {
@@ -191,9 +192,8 @@ NSString * const kMSNordeaAccountListURL = @"https://mobil.nordea.se/banking-nor
 - (NSData *)manipulateAccountBalanceResponse:(NSData *)html
 {
     NSString *htmlString = [[NSString alloc] initWithData:html encoding:NSISOLatin1StringEncoding];
-    return [self cleanStringFromJavascript:htmlString];
+    return [htmlString cleanStringFromJavascriptWithEncoding:NSISOLatin1StringEncoding];
 }
-
 
 #pragma mark - Accessors
 

@@ -29,6 +29,5 @@ typedef void (^MSLServiceFailureBlock)(NSError *error, NSString *errorMessage);
 
 - (void)performLoginWithSuccessBlock:(MSLServiceSimpleBlock)success failure:(MSLServiceFailureBlock)failure;
 - (void)fetchAccountBalance:(void(^)(NSArray *accounts))success failure:(MSLServiceFailureBlock)failure;
-- (NSData *)cleanStringFromJavascript:(NSString *)html;
 
 @end

@@ -40,7 +40,7 @@
     if ([username length] >= 4 && [username length] <= 45)
         return YES;
     
-    *message = @"Användarnamnet måste innehålla mellan 4 och 45 tecken.";
+    *message = @"Tänk på att användarnamnet är skiftlägeskänsligt. Användarnamnet måste innehålla mellan 4 och 45 tecken.";
     return NO;
 }
 
@@ -49,7 +49,7 @@
     if ([password length] >= 6)
         return YES;
  
-    *message = @"Lösenorder måste ha minst 6 tecken och innehålla minst en versal (A-Z), en gemen (a-z) samt en siffra (0-9). Även tecknen @._- är tillåtna.";
+    *message = @"Lösenordet måste ha minst 6 tecken och innehålla minst en versal (A-Z), en gemen (a-z) samt en siffra (0-9). Även tecknen @._- är tillåtna.";
     return NO;
 }
 

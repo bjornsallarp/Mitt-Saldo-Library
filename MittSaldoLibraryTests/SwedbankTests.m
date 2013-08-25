@@ -11,6 +11,7 @@
 #import "MSLSwedbankLoginParser.h"
 #import "MSLSwedbankServiceProxy.h"
 #import "MSLParsedAccount.h"
+#import "NSString+MSLHtmlStripScriptTag.h"
 
 @implementation SwedbankTests
 
@@ -45,9 +46,8 @@
     
     NSData *loginPageData = [self dataForFileWithName:@"swedbank-login-step1"];
     NSString *html = [[NSString alloc] initWithData:loginPageData encoding:NSUTF8StringEncoding];
-
-    MSLSwedbankServiceProxy *proxy = [MSLSwedbankServiceProxy proxyWithUsername:@"asd" andPassword:@"asd"];
-    NSData *cleanLoginPageData = [proxy cleanStringFromJavascript:html];
+    
+    NSData *cleanLoginPageData = [html cleanStringFromJavascriptWithEncoding:NSUTF8StringEncoding];
     
     NSError *error = nil;
     [loginParser parseXMLData:cleanLoginPageData parseError:&error];

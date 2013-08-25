@@ -11,8 +11,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MSLAccountsParserBase.h"
 
-@interface MSLLansforsakringarAccountParser : MSLAccountsParserBase
+@interface MSLHiddenInputsParser : NSObject
+
+@property (nonatomic, strong) NSMutableDictionary *hiddenFields;
+
+- (BOOL)parseXMLData:(NSData *)XMLMarkup parseError:(NSError **)error;
 
 @end

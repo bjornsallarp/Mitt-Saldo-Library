@@ -11,107 +11,97 @@
 //
 
 #import "MSLLansforsakringarAccountParser.h"
+#import "NSScanner+MSLScannerHtmlHelper.h"
 #import "MSLParsedAccount.h"
 
 @interface MSLLansforsakringarAccountParser()
-@property (nonatomic, strong) MSLParsedAccount *currentAccount;
-@property (nonatomic, strong) NSMutableString *elementInnerContent;
+- (NSArray *)parseAccountTableRowsFromHtml:(NSString *)html error:(NSError *)error;
 @end
 
 @implementation MSLLansforsakringarAccountParser
-@dynamic elementInnerContent;
-@dynamic currentAccount;
 
-- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName 
-  namespaceURI:(NSString *)namespaceURI 
- qualifiedName:(NSString *)qName 
-	attributes:(NSDictionary *)attributeDict
+- (BOOL)parseXMLData:(NSData *)XMLMarkup parseError:(NSError **)error
 {
-	if (qName) {
-        elementName = qName;
-    }
-	
-	// These are the elements we read information from.
-	if ([elementName isEqualToString:@"form"] && [[attributeDict valueForKey:@"id"] isEqualToString:@"paymentAcccountsAndCards"]) {
-		accountsParsed = 0;
-		
-		isParsingPayAccounts = YES;
-		isParsingSavingsAccounts = isParsingAccount = isParsingAmount = NO;
-	} 
-	else if ([elementName isEqualToString:@"form"] && [[attributeDict valueForKey:@"id"] isEqualToString:@"savingsAccountsForm"]) {
-		isParsingSavingsAccounts = YES;
-		isParsingPayAccounts = isParsingAccount = isParsingAmount = NO;		
-		
-		// We start at 1000, it's unlikely someone will have 1000+ pay accounts
-		savingsAccountsParsed = 1000;
-	}
-	else if ((isParsingSavingsAccounts || isParsingPayAccounts) && 
-			[elementName isEqualToString:@"tr"] && [[attributeDict valueForKey:@"class"] isEqualToString:@"clickable"]) {
-		isParsingAccount = YES;
-		isParsingAmount = NO;
-        self.elementInnerContent = [NSMutableString string];
-	}
-	else if (isParsingAccount && [elementName isEqualToString:@"td"] && [[attributeDict valueForKey:@"colspan"] isEqualToString:@"2"]) {
-		isParsingAccount = NO;
-	}
-	else if (isParsingAccount && [elementName isEqualToString:@"td"] && !isParsingAmount) {
-
-        self.currentAccount = [[MSLParsedAccount alloc] init];
-        self.currentAccount.accountId = @(isParsingPayAccounts ? accountsParsed : savingsAccountsParsed);
-	}
-}
-
-- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName 
-  namespaceURI:(NSString *)namespaceURI 
- qualifiedName:(NSString *)qName
-{     
-    if (qName) {
-        elementName = qName;
+    self.parsedAccounts = [NSMutableArray array];
+    
+    NSString *html = [[NSString alloc] initWithData:XMLMarkup encoding:NSUTF8StringEncoding];
+    NSError *regexError = nil;
+    
+    NSArray *rowsHtml = [self parseAccountTableRowsFromHtml:html error:regexError];
+    
+    if (regexError != nil) {
+        *error = regexError;
+        return NO;
     }
     
-	if (isParsingAccount && [elementName isEqualToString:@"tr"]) {
-		isParsingAccount = isParsingAmount = NO;
-	}
-	else if ([elementName isEqualToString:@"form"]) {
-		isParsingPayAccounts = isParsingSavingsAccounts = NO;
-	}
-	else if (isParsingAccount && isParsingAmount && [elementName isEqualToString:@"td"]) {
-		NSString *amountString = [self.elementInnerContent stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"\t\n "]];
-		amountString = [amountString stringByReplacingOccurrencesOfString:@" " withString:@""];
-		amountString = [amountString stringByReplacingOccurrencesOfString:@"." withString:@""];
-		
-		NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
-		[f setNumberStyle:NSNumberFormatterDecimalStyle];
-		[f setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"sv_SE"]];
-		
-        self.currentAccount.amount = [f numberFromString:amountString];
-		
-		
-		
-		debug_NSLog(@"%@. %@ -> %@ kr.", self.currentAccount.accountId, self.currentAccount.accountName, self.currentAccount.amount);
-		
-		if (isParsingPayAccounts) {
-			accountsParsed++;
-		}
-		else if (isParsingSavingsAccounts) {
-			savingsAccountsParsed++;
-		}
-		
-        [self.parsedAccounts addObject:self.currentAccount];
-        self.currentAccount = nil;
+    int count = 0;
+    for (NSString *rowHtml in rowsHtml) {
         
-		// After the amount we're not parsing more
-		isParsingAmount = NO;
-		isParsingAccount = NO;
-        self.elementInnerContent = nil;
-	}
-	else if (isParsingAccount && [elementName isEqualToString:@"td"]) {
-		NSString *accountName = [self.elementInnerContent stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"\t\n "]];
-		self.currentAccount.accountName = [accountName stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-		// After accountname we parse amount
-		isParsingAmount = YES;
-        self.elementInnerContent = [NSMutableString string];
-	}
+        NSScanner *scanner = [NSScanner scannerWithString:rowHtml];
+        [scanner skipIntoTag:@"a"];
+        
+        NSString *name;
+        [scanner scanUpToString:@"<" intoString:&name];
+        
+        [scanner skipIntoTag:@"td"];
+        [scanner skipIntoTag:@"td"];
+        
+        NSString *availaleAmount;
+        [scanner scanUpToString:@"<" intoString:&availaleAmount];
+        
+        [scanner skipIntoTag:@"td"];
+        
+        NSString *amount;
+        [scanner scanUpToString:@"<" intoString:&amount];
+        
+        MSLParsedAccount *account = [[MSLParsedAccount alloc] init];
+        account.accountId = @(count);
+        account.accountName = name;
+        account.amount = [self parseAmountFromString:amount];
+        account.availableAmount = [self parseAmountFromString:availaleAmount];
+
+        debug_NSLog(@"Name: %@, Amount: %@, AvailableAmount: %@", name, amount, availaleAmount);
+        [self.parsedAccounts addObject:account];
+        
+        count++;
+    }
+    
+    return YES;
+}
+
+- (NSArray *)parseAccountTableRowsFromHtml:(NSString *)html error:(NSError *)error
+{
+    NSRegularExpression *tableRegex = [NSRegularExpression regularExpressionWithPattern:@"<tbody[\\d\\D]*?accountListDataTable[\\d\\D]*?>[\\d\\D]*?(<tr[\\d\\D]*?>[\\d\\D]*?</tr>)</tbody>" options:NSRegularExpressionCaseInsensitive error:&error];
+    
+    NSTextCheckingResult *match = [tableRegex firstMatchInString:html
+                                                         options:0
+                                                           range:NSMakeRange(0, [html length])];
+    
+    NSString *tableRows = [html substringWithRange:[match rangeAtIndex:1]];
+    
+    NSRegularExpression *rowRegex = [NSRegularExpression regularExpressionWithPattern:@"<tr[\\d\\D]*?>[\\d\\D]*?</tr>" options:NSRegularExpressionCaseInsensitive error:&error];
+    
+    NSArray *rowMatches = [rowRegex matchesInString:tableRows options:0 range:NSMakeRange(0, [tableRows length])];
+    
+    NSMutableArray *rowsHtml = [NSMutableArray array];
+    [rowMatches enumerateObjectsUsingBlock:^(NSTextCheckingResult *match, NSUInteger idx, BOOL *stop) {
+        [rowsHtml addObject:[tableRows substringWithRange:[match range]]];
+    }];
+    
+    return rowsHtml;
+}
+
+- (NSNumber *)parseAmountFromString:(NSString *)string
+{
+    NSString *amountString = [string stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"\t\n "]];
+    amountString = [amountString stringByReplacingOccurrencesOfString:@" " withString:@""];
+    amountString = [amountString stringByReplacingOccurrencesOfString:@"." withString:@""];
+    
+    NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+    [f setNumberStyle:NSNumberFormatterDecimalStyle];
+    [f setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"sv_SE"]];
+    
+    return [f numberFromString:amountString];
 }
 
 @end

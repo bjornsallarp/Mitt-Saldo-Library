@@ -14,7 +14,6 @@
 
 @implementation MSLIkanoBankLoginParser
 
-
 - (BOOL)parseXMLData:(NSData *)XMLMarkup parseError:(NSError **)error
 {
 	BOOL successful = YES;

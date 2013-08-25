@@ -11,10 +11,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "MSLServiceProxyBase.h"
 
 @interface MSLLansforsakringarServiceProxy : MSLServiceProxyBase
 + (id)proxyWithUsername:(NSString *)username andPassword:(NSString *)password;
-@property (nonatomic, strong) NSData *authenticatedResponse;
-@property (nonatomic, strong) NSURL *authenticatedURL;
+- (void)loadLoginIntoBrowser:(UIWebView *)browser;
 @end

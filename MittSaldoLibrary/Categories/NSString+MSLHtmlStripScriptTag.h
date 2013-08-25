@@ -12,13 +12,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MSLLansforsakringarLoginParser : NSObject<NSXMLParserDelegate>
-{
-	BOOL inLoginForm;
-}
+@interface NSString (MSLHtmlStripScriptTag)
 
-@property (nonatomic, strong) NSMutableDictionary *hiddenFields;
-
-- (BOOL)parseXMLData:(NSData *)XMLMarkup parseError:(NSError **)error;
+- (NSData *)cleanStringFromJavascriptWithEncoding:(NSStringEncoding)encoding;
 
 @end

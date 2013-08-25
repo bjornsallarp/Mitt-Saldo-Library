@@ -14,6 +14,7 @@
 #import "MSLSwedbankLoginParser.h"
 #import "MSLSwedbankAccountParser.h"
 #import "MSLNetworkingClient.h"
+#import "NSString+MSLHtmlStripScriptTag.h"
 
 NSString * const kMSSwedbankLoginURL = @"https://mobilbank.swedbank.se/banking/swedbank/login.html";
 NSString * const kMSSwedbankTransferFundsURL = @"https://mobilbank.swedbank.se/banking/swedbank/newTransfer.html";
@@ -51,7 +52,7 @@ NSString * const kMSSwedbankAccountListURL = @"https://mobilbank.swedbank.se/ban
     [[MSLNetworkingClient sharedClient] getRequestWithURL:[self loginURL] cookieStorage:self.cookieStorage completionBlock:^(AFHTTPRequestOperation *requestOperation, NSError *error) {
         if ([requestOperation hasAcceptableStatusCode]) {
             
-            NSData *cleanLoginPage = [self cleanStringFromJavascript:requestOperation.responseString];
+            NSData *cleanLoginPage = [requestOperation.responseString cleanStringFromJavascriptWithEncoding:NSISOLatin1StringEncoding];
             [self.loginParser parseXMLData:cleanLoginPage parseError:nil];
             
             if (self.loginParser.csrf_token == nil || [self.loginParser.csrf_token isEqualToString:@""]) {
@@ -72,7 +73,7 @@ NSString * const kMSSwedbankAccountListURL = @"https://mobilbank.swedbank.se/ban
    [self postLoginWithCompletionBlock:^(AFHTTPRequestOperation *requestOperation, NSError *error) {
        if ([requestOperation hasAcceptableStatusCode]) {
            
-           NSData *cleanLoginPage = [self cleanStringFromJavascript:requestOperation.responseString];
+           NSData *cleanLoginPage = [requestOperation.responseString cleanStringFromJavascriptWithEncoding:NSISOLatin1StringEncoding];
            [self.loginParser parseXMLData:cleanLoginPage parseError:nil];
            
            if (self.loginParser.passwordField) {
@@ -132,7 +133,7 @@ NSString * const kMSSwedbankAccountListURL = @"https://mobilbank.swedbank.se/ban
 - (NSData *)manipulateAccountBalanceResponse:(NSData *)html
 {
     NSString *htmlString = [[NSString alloc] initWithData:html encoding:NSUTF8StringEncoding];
-    return [self cleanStringFromJavascript:htmlString];
+    return [htmlString cleanStringFromJavascriptWithEncoding:NSUTF8StringEncoding];
 }
 
 #pragma mark - Accessors
