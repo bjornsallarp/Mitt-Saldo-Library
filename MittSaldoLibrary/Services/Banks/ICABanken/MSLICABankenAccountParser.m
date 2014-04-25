@@ -33,7 +33,7 @@
     }
 	
 	// These are the elements we read information from.
-	if (!self.currentAccount && [elementName isEqualToString:@"div"] && [[attributeDict valueForKey:@"class"] isEqualToString:@"row"] && [attributeDict valueForKey:@"onmousedown"] != nil) {
+	if (!self.currentAccount && [elementName isEqualToString:@"div"] && [[attributeDict valueForKey:@"class"] isEqualToString:@"row"] && [attributeDict valueForKey:@"onclick"] != nil) {
 		self.currentAccount = [[MSLParsedAccount alloc] init];
         self.currentAccount.accountId = @((int)[self.parsedAccounts count]);
 	}

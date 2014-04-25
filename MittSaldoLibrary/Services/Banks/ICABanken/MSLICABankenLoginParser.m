@@ -52,28 +52,31 @@
         elementName = qName;
     }
 	
-	// Store all the hidden fields. ASP.NET stores some viewstate information in hidden inputfields that 
+	// Store all the hidden fields (with values). ASP.NET stores some viewstate information in hidden inputfields that
 	// are required for a successful postback
 	if ([elementName isEqualToString:@"input"]) {
         NSString *inputType = [attributeDict valueForKey:@"type"];
         NSString *inputValue = [attributeDict valueForKey:@"value"];
+        NSString *inputName = [attributeDict valueForKey:@"name"];
         
-		if ([inputType isEqualToString:@"hidden"]) {
-            if ([attributeDict valueForKey:@"name"] != nil) {
-                (self.hiddenFields)[[attributeDict valueForKey:@"name"]] = inputValue;
+		if ([inputType isEqualToString:@"hidden"] && inputValue != nil) {
+            if (inputName != nil) {
+                (self.hiddenFields)[inputName] = inputValue;
             }
             else if ([attributeDict valueForKey:@"id"] != nil) {
                 (self.hiddenFields)[[attributeDict valueForKey:@"id"]] = inputValue;                
             }
 		}
 		else if ([inputType isEqualToString:@"submit"]  && [inputValue isEqualToString:@"Logga in"]) {
-			(self.hiddenFields)[[attributeDict valueForKey:@"name"]] = inputValue;
+			(self.hiddenFields)[inputName] = inputValue;
 		}
         else if ([inputType isEqualToString:@"password"]) {
-            self.passwordFieldName = [attributeDict valueForKey:@"name"];
+            self.passwordFieldName = inputName;
         }
-        else if ([[attributeDict valueForKey:@"maxlength"] isEqualToString:@"13"] && ([inputType isEqualToString:@"tel"] || [inputType isEqualToString:@"customer-id"])) {
-            self.ssnFieldName = [attributeDict valueForKey:@"name"];
+        else if ([[attributeDict valueForKey:@"maxlength"] isEqualToString:@"13"] &&
+                 [inputType isEqualToString:@"tel"] &&
+                 [[attributeDict valueForKey:@"class"] isEqualToString:@"customer-id"]) {
+            self.ssnFieldName = inputName;
         }
 	}
 
